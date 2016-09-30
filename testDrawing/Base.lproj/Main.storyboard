@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-XE-n0y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Erase" id="C7X-EQ-gug">
+                                    <barButtonItem image="Eraser" id="C7X-EQ-gug">
                                         <connections>
                                             <action selector="erase:" destination="BYZ-38-t0r" id="Luc-c8-QLp"/>
                                         </connections>
@@ -96,13 +97,13 @@
                                 <exclude reference="MC5-XE-n0y"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="LED-1Z-Xgq"/>
-                                <exclude reference="aLf-Bh-t9e"/>
-                                <exclude reference="mYg-HN-AWB"/>
                                 <exclude reference="LET-gc-f8f"/>
                                 <exclude reference="gBL-JW-kl7"/>
                                 <exclude reference="p2a-Z8-YB2"/>
                                 <exclude reference="wi4-8f-BFP"/>
+                                <exclude reference="LED-1Z-Xgq"/>
+                                <exclude reference="aLf-Bh-t9e"/>
+                                <exclude reference="mYg-HN-AWB"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -111,13 +112,13 @@
                                 <include reference="MC5-XE-n0y"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="LED-1Z-Xgq"/>
-                                <include reference="aLf-Bh-t9e"/>
-                                <include reference="mYg-HN-AWB"/>
                                 <include reference="LET-gc-f8f"/>
                                 <include reference="gBL-JW-kl7"/>
                                 <include reference="p2a-Z8-YB2"/>
                                 <include reference="wi4-8f-BFP"/>
+                                <include reference="LED-1Z-Xgq"/>
+                                <include reference="aLf-Bh-t9e"/>
+                                <include reference="mYg-HN-AWB"/>
                             </mask>
                         </variation>
                     </view>
@@ -131,6 +132,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Eraser" width="25" height="25"/>
         <image name="black" width="33" height="33"/>
         <image name="blue" width="33" height="33"/>
         <image name="green" width="33" height="33"/>
