@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184644C31DA03F74004D578A /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184644C21DA03F74004D578A /* PlaceViewController.swift */; };
 		A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */; };
 		A30F4C351D9BAC2A00546A2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C341D9BAC2A00546A2B /* ViewController.swift */; };
 		A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C361D9BAC2A00546A2B /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184644C21DA03F74004D578A /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		A30F4C2F1D9BAC2A00546A2B /* testDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A30F4C341D9BAC2A00546A2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */,
 				A30F4C3E1D9BAC2B00546A2B /* Info.plist */,
 				A30F4C751D9BEC6400546A2B /* testViewController.swift */,
+				184644C21DA03F74004D578A /* PlaceViewController.swift */,
 			);
 			path = testDrawing;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */,
 				A30F4C351D9BAC2A00546A2B /* ViewController.swift in Sources */,
 				A30F4C761D9BEC6400546A2B /* testViewController.swift in Sources */,
+				184644C31DA03F74004D578A /* PlaceViewController.swift in Sources */,
 				A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +300,7 @@
 				A30F4C431D9BAC2B00546A2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

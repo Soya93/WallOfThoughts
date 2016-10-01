@@ -6,11 +6,13 @@
 //  Copyright © 2016 Julia Friberg. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var drawView: DrawableView!
+    
+    var image: UIImage?
     
     let color: [String] = ["000000",
                            "4CD964",
@@ -45,16 +47,32 @@ class ViewController: UIViewController {
         drawView.drawColor = UIColor.whiteColor()
         drawView.drawWidth = 20.0
     }
+    
+    @IBAction func cancel(sender: AnyObject) {
+        /*UIBarButtonItem) {
+            dismissViewControllerAnimated(true, completion: nil)*/
+    }
+    
+    func saveThought(){
+        UIGraphicsBeginImageContextWithOptions(drawView.bounds.size, drawView.opaque, 0.0)
+        drawView!.drawViewHierarchyInRect(drawView.bounds, afterScreenUpdates: false)
+        let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //print(snapshotImageFromMyView)
+        self.image = snapshotImageFromMyView
+        print("in create image is ")
+        print(image)
+    }
    
-/*
+
  // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
-*/
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPlace" {
+                let controller = segue.destinationViewController as! PlaceViewController
+                saveThought()
+                controller.image = image
+        }
+    }
     
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
