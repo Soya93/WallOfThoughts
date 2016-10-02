@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DrawViewController: UIViewController {
     
     @IBOutlet weak var drawView: DrawableView!
     
@@ -37,12 +37,15 @@ class ViewController: UIViewController {
         if sender.tag >= 0 || sender.tag <= 7 {
             id = sender.tag
         }
-        drawView.drawColor = self.hexStringToUIColor(color[id])
+        
+        
+        drawView.drawColor = self.hexStringToUIColor(hex: color[id])
+        drawView.drawWidth = 8.0
         
     }
 
     @IBAction func erase(sender: UIBarButtonItem) {
-        drawView.drawColor = UIColor.whiteColor()
+        drawView.drawColor = UIColor.white
         drawView.drawWidth = 20.0
     }
    
@@ -57,20 +60,13 @@ class ViewController: UIViewController {
 */
     
     func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
-        
-        if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
-        }
-        
-        if ((cString.characters.count) != 6) {
-            return UIColor.grayColor()
+        if ((hex.characters.count) != 6) {
+            return UIColor.gray
         }
         
         var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
-        
-        return UIColor(
+        Scanner(string: hex).scanHexInt32(&rgbValue)
+                return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,

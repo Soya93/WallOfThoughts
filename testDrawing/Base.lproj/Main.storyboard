@@ -1,87 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TGI-RW-dnD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New thought-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testDrawing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DrawViewController" customModule="testDrawing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyL-Ao-bzR" userLabel="drawableView" customClass="DrawableView" customModule="testDrawing" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-XE-n0y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <barButtonItem image="Eraser" id="C7X-EQ-gug">
                                         <connections>
-                                            <action selector="erase:" destination="BYZ-38-t0r" id="Luc-c8-QLp"/>
+                                            <action selector="eraseWithSender:" destination="BYZ-38-t0r" id="N6e-ff-Ppp"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem image="black" style="plain" id="H4N-xF-5l6" userLabel="black">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="vqn-St-TP2"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="wKT-nN-Pcn"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="1" image="green" id="Xlb-Jr-jEj" userLabel="green">
-                                        <color key="tintColor" red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.26102268695831299" green="0.83681917190551758" blue="0.31946933269500732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="GFL-PK-3Pl"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="WOz-Ij-JDJ"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="2" image="lightBlue" id="nhn-Xi-1Vm" userLabel="light blue">
-                                        <color key="tintColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.2983720600605011" green="0.73470252752304077" blue="0.97413814067840576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="cQx-yo-27r"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="FN3-jD-ENt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="3" image="blue" id="Scq-gd-7sb" userLabel="blue">
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="gCN-oM-j1a"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="BJk-FZ-2el"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="4" image="pink" id="MHf-cR-Zw6" userLabel="pink">
-                                        <color key="tintColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.98624116182327271" green="0.049929037690162659" blue="0.26609480381011963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="Rwj-oQ-PYZ"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="kz5-my-fki"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="5" image="red" id="lrU-Lf-eZI" userLabel="red">
-                                        <color key="tintColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.98658347129821777" green="0.12904104590415955" blue="0.14572040736675262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="ddl-xP-gED"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="5t0-sl-CrO"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="6" image="orange" id="4F4-SE-3L3" userLabel="orange">
-                                        <color key="tintColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.99055147171020508" green="0.50925779342651367" blue="0.032983742654323578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="3Xh-OI-Eqj"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="zBB-yE-92D"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem tag="7" image="yellow" id="OvC-xB-PTd" userLabel="yellow">
-                                        <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.99517929553985596" green="0.76438117027282715" blue="0.036827042698860168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="colorPressed:" destination="BYZ-38-t0r" id="IXg-1d-LhB"/>
+                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="i1o-bz-Vr4"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eyL-Ao-bzR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="LED-1Z-Xgq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="MC5-XE-n0y" secondAttribute="bottom" id="LET-gc-f8f"/>
@@ -122,13 +121,78 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="New thought" id="P1j-F7-La2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4x-A5-2HZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5JH-ez-Lqh">
+                            <connections>
+                                <segue destination="OTU-Hb-Cca" kind="show" identifier="finishedDrawing" id="oTg-Ty-MVp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="drawView" destination="eyL-Ao-bzR" id="IQg-ho-N1m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1119" y="252"/>
+        </scene>
+        <!--Place-->
+        <scene sceneID="bvF-mN-3Xk">
+            <objects>
+                <viewController id="7Ad-4x-B9A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xwt-PZ-WJW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ju5-qG-Irz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9YV-NH-Cam">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Place" id="a1V-bq-DOi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Bpo-VX-u8w"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5D-WO-QZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2826" y="252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hb8-fJ-BgR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TGI-RW-dnD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kHB-QH-5AW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zGq-Og-YSW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yaY-jH-iER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="201" y="252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M6N-fW-Vlt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OTU-Hb-Cca" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gd6-kw-JGa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Ad-4x-B9A" kind="relationship" relationship="rootViewController" id="pRq-pj-uoY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dw-kH-J5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="252"/>
         </scene>
     </scenes>
     <resources>

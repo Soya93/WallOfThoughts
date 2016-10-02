@@ -2,10 +2,10 @@ import UIKit
 
 class DrawableView : UIView {
     
-    var drawColor: UIColor = UIColor.blackColor()
+    var drawColor: UIColor = UIColor.black
     var drawWidth: CGFloat = 8.0
     
-    private var lastPoint: CGPoint = CGPointZero
+    private var lastPoint: CGPoint = CGPoint.zero
     private var buffer: UIImage?
     
     override func awakeFromNib() {
@@ -22,48 +22,48 @@ class DrawableView : UIView {
         UIGraphicsBeginImageContextWithOptions(size, true, 0)
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetFillColorWithColor(context, self.backgroundColor?.CGColor ?? UIColor.whiteColor().CGColor)
-        CGContextFillRect(context, self.bounds)
+        context!.setFillColor(self.backgroundColor?.cgColor ?? UIColor.white.cgColor)
+        context!.fill(self.bounds)
         
         // Draw previous buffer first
         if let buffer = buffer {
-            buffer.drawInRect(self.bounds)
+            buffer.draw(in: self.bounds)
         }
         
         // Draw the line
         self.drawColor.setStroke()
-        CGContextSetLineWidth(context, self.drawWidth)
-        CGContextSetLineCap(context, .Round)
+        context!.setLineWidth(self.drawWidth)
+        context!.setLineCap(.round)
         
-        CGContextMoveToPoint(context, a.x, a.y)
-        CGContextAddLineToPoint(context, b.x, b.y)
-        CGContextStrokePath(context)
+        context!.move(to: a)
+        context!.addLine(to: b)
+        context!.strokePath()
         
         // Grab the updated buffer
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
     
     // MARK: Gestures
     
     private func setupGestureRecognizers() {
         // 1. Set up a pan gesture recognizer to track where user moves finger
-        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DrawableView.handlePan(_:)))
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(sender: )))
         self.addGestureRecognizer(panRecognizer)
     }
     
     @objc private func handlePan(sender: UIPanGestureRecognizer) {
-        let point = sender.locationInView(self)
+        let point = sender.location(in: self)
         switch sender.state {
-        case .Began:
-            self.startAtPoint(point)
-        case .Changed:
-            self.continueAtPoint(point)
-        case .Ended:
-            self.endAtPoint(point)
-        case .Failed:
-            self.endAtPoint(point)
+        case .began:
+            self.startAtPoint(point: point)
+        case .changed:
+            self.continueAtPoint(point: point)
+        case .ended:
+            self.endAtPoint(point: point)
+        case .failed:
+            self.endAtPoint(point: point)
         default:
             assert(false, "State not handled")
         }
@@ -78,10 +78,10 @@ class DrawableView : UIView {
     private func continueAtPoint(point: CGPoint) {
         autoreleasepool {
             // 2. Draw the current stroke in an accumulated bitmap
-            self.buffer = self.drawLine(self.lastPoint, b: point, buffer: self.buffer)
+            self.buffer = self.drawLine(a: self.lastPoint, b: point, buffer: self.buffer)
             
             // 3. Replace the layer contents with the updated image
-            self.layer.contents = self.buffer?.CGImage ?? nil
+            self.layer.contents = self.buffer?.cgImage ?? nil
             
             // 4. Update last point for next stroke
             self.lastPoint = point
@@ -89,7 +89,7 @@ class DrawableView : UIView {
     }
     
     private func endAtPoint(point: CGPoint) {
-        self.lastPoint = CGPointZero
+        self.lastPoint = CGPoint.zero
     }
     
     

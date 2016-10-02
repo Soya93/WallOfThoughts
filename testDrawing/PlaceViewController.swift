@@ -1,14 +1,14 @@
 //
-//  testViewController.swift
+//  PlaceViewController.swift
 //  testDrawing
 //
-//  Created by Julia Friberg on 2016-09-28.
+//  Created by Julia Friberg on 2016-09-30.
 //  Copyright © 2016 Julia Friberg. All rights reserved.
 //
 
 import UIKit
 
-class testViewController: UIViewController {
+class PlaceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

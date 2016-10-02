@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */; };
-		A30F4C351D9BAC2A00546A2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C341D9BAC2A00546A2B /* ViewController.swift */; };
+		A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */; };
 		A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C361D9BAC2A00546A2B /* Main.storyboard */; };
 		A30F4C3A1D9BAC2A00546A2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C391D9BAC2A00546A2B /* Assets.xcassets */; };
 		A30F4C3D1D9BAC2A00546A2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */; };
 		A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C711D9BC63F00546A2B /* DrawableView.swift */; };
-		A30F4C761D9BEC6400546A2B /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C751D9BEC6400546A2B /* testViewController.swift */; };
+		A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A30F4C2F1D9BAC2A00546A2B /* testDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A30F4C341D9BAC2A00546A2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		A30F4C371D9BAC2A00546A2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A30F4C391D9BAC2A00546A2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A30F4C3C1D9BAC2A00546A2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A30F4C3E1D9BAC2B00546A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30F4C711D9BC63F00546A2B /* DrawableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
-		A30F4C751D9BEC6400546A2B /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +60,12 @@
 			children = (
 				A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */,
 				A30F4C711D9BC63F00546A2B /* DrawableView.swift */,
-				A30F4C341D9BAC2A00546A2B /* ViewController.swift */,
+				A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */,
 				A30F4C361D9BAC2A00546A2B /* Main.storyboard */,
 				A30F4C391D9BAC2A00546A2B /* Assets.xcassets */,
 				A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */,
 				A30F4C3E1D9BAC2B00546A2B /* Info.plist */,
-				A30F4C751D9BEC6400546A2B /* testViewController.swift */,
+				A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */,
 			);
 			path = testDrawing;
 			sourceTree = "<group>";
@@ -97,11 +97,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Julia Friberg";
 				TargetAttributes = {
 					A30F4C2E1D9BAC2900546A2B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = AD9PDVLN6F;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -142,8 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */,
-				A30F4C351D9BAC2A00546A2B /* ViewController.swift in Sources */,
-				A30F4C761D9BEC6400546A2B /* testViewController.swift in Sources */,
+				A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */,
+				A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */,
 				A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,8 +186,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -230,8 +234,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -250,6 +256,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -259,10 +266,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.testDrawing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -270,10 +279,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.testDrawing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -296,6 +307,7 @@
 				A30F4C431D9BAC2B00546A2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
