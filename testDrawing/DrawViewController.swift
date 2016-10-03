@@ -6,11 +6,13 @@
 //  Copyright © 2016 Julia Friberg. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 class DrawViewController: UIViewController {
     
     @IBOutlet weak var drawView: DrawableView!
+    
+    var image: UIImage?
     
     let color: [String] = ["000000",
                            "4CD964",
@@ -48,16 +50,30 @@ class DrawViewController: UIViewController {
         drawView.drawColor = UIColor.white
         drawView.drawWidth = 20.0
     }
+    
+    @IBAction func cancel(sender: AnyObject) {
+        /*UIBarButtonItem) {
+            dismissViewControllerAnimated(true, completion: nil)*/
+    }
+    
+    func saveThought(){
+        UIGraphicsBeginImageContextWithOptions(drawView.bounds.size, drawView.isOpaque, 0.0)
+        drawView!.drawHierarchy(in: drawView.bounds, afterScreenUpdates: false)
+        let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.image = snapshotImageFromMyView
+        
+    }
    
-/*
+
  // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
-*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "finishedDrawing" {
+                let controller = (segue.destination as! UINavigationController).topViewController as! PlaceViewController
+                saveThought()
+                controller.image = image
+        }
+    }
     
     func hexStringToUIColor (hex:String) -> UIColor {
         if ((hex.characters.count) != 6) {

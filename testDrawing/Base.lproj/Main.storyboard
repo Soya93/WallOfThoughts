@@ -125,7 +125,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4x-A5-2HZ"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="5JH-ez-Lqh">
                             <connections>
-                                <segue destination="OTU-Hb-Cca" kind="show" identifier="finishedDrawing" id="oTg-Ty-MVp"/>
+                                <segue destination="OTU-Hb-Cca" kind="showDetail" identifier="finishedDrawing" action="showViewController:sender:" id="oTg-Ty-MVp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,19 +140,29 @@
         <!--Place-->
         <scene sceneID="bvF-mN-3Xk">
             <objects>
-                <viewController id="7Ad-4x-B9A" sceneMemberID="viewController">
+                <viewController id="7Ad-4x-B9A" customClass="PlaceViewController" customModule="testDrawing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xwt-PZ-WJW"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ju5-qG-Irz"/>
+                        <viewControllerLayoutGuide type="top" id="KC7-ha-jCn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cc7-AK-eZP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9YV-NH-Cam">
+                    <view key="view" contentMode="scaleToFill" id="wBv-XI-80M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HWi-Xb-dg2">
+                                <frame key="frameInset" minX="124" minY="257" width="108" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Place" id="a1V-bq-DOi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Bpo-VX-u8w"/>
+                    <navigationItem key="navigationItem" title="Place" id="jp5-X5-iGO">
+                        <barButtonItem key="leftBarButtonItem" title="New Thought" id="s1h-iL-zXK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="daG-xv-5xl"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageContainer" destination="HWi-Xb-dg2" id="eGu-vl-AVk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5D-WO-QZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
