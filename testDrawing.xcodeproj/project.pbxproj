@@ -14,6 +14,7 @@
 		A30F4C3D1D9BAC2A00546A2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */; };
 		A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C711D9BC63F00546A2B /* DrawableView.swift */; };
 		A35478B41DA3C48300C350FC /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B31DA3C48200C350FC /* DraggableView.swift */; };
+		A35478B61DA404B100C350FC /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B51DA404B100C350FC /* WallViewController.swift */; };
 		A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		A30F4C3E1D9BAC2B00546A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30F4C711D9BC63F00546A2B /* DrawableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
 		A35478B31DA3C48200C350FC /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		A35478B51DA404B100C350FC /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
 		A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,11 +66,12 @@
 				A30F4C711D9BC63F00546A2B /* DrawableView.swift */,
 				A35478B31DA3C48200C350FC /* DraggableView.swift */,
 				A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */,
+				A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */,
+				A35478B51DA404B100C350FC /* WallViewController.swift */,
 				A30F4C361D9BAC2A00546A2B /* Main.storyboard */,
 				A30F4C391D9BAC2A00546A2B /* Assets.xcassets */,
 				A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */,
 				A30F4C3E1D9BAC2B00546A2B /* Info.plist */,
-				A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */,
 			);
 			path = testDrawing;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35478B61DA404B100C350FC /* WallViewController.swift in Sources */,
 				A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */,
 				A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */,
 				A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */,
