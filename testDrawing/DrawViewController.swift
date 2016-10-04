@@ -97,7 +97,6 @@ class DrawViewController: UIViewController {
     
     func imageByMakingWhiteBackgroundTransparent() -> UIImage? {
         if let rawImageRef = self.image {
-            //TODO: eliminate alpha channel if exsists
             let colorMasking: [CGFloat] = [200, 255, 200, 255, 200, 255]
             UIGraphicsBeginImageContext((image?.size)!)
             if let maskedImageRef = image?.cgImage?.copy(maskingColorComponents: colorMasking) {
