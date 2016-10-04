@@ -26,7 +26,6 @@ class DrawViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,6 +61,8 @@ class DrawViewController: UIViewController {
         let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.image = snapshotImageFromMyView
+        self.image = imageByMakingWhiteBackgroundTransparent()
+        
         
     }
    
@@ -71,9 +72,13 @@ class DrawViewController: UIViewController {
         if segue.identifier == "finishedDrawing" {
                 let controller = (segue.destination as! UINavigationController).topViewController as! PlaceViewController
                 saveThought()
-                controller.image = image
-        }
+                controller.image = image        }
     }
+    
+    @IBAction func unwindToDrawViewController(sender: UIStoryboardSegue) {
+        //Do nothing
+    }
+    
     
     func hexStringToUIColor (hex:String) -> UIColor {
         if ((hex.characters.count) != 6) {
@@ -88,6 +93,23 @@ class DrawViewController: UIViewController {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+    
+    func imageByMakingWhiteBackgroundTransparent() -> UIImage? {
+        if let rawImageRef = self.image {
+            //TODO: eliminate alpha channel if exsists
+            let colorMasking: [CGFloat] = [200, 255, 200, 255, 200, 255]
+            UIGraphicsBeginImageContext((image?.size)!)
+            if let maskedImageRef = image?.cgImage?.copy(maskingColorComponents: colorMasking) {
+                UIGraphicsGetCurrentContext()!.translateBy(x: 0.0, y: rawImageRef.size.height)
+                UIGraphicsGetCurrentContext()!.scaleBy(x: 1.0, y: -1.0)
+                UIGraphicsGetCurrentContext()?.draw(maskedImageRef, in: CGRect(x: 0, y: 0, width: rawImageRef.size.width, height: rawImageRef.size.height))
+                let result = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                return result
+            }
+        }
+        return nil
     }
  
 }

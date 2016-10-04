@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        UINavigationBar.appearance().tintColor = UIColor.green
         // Override point for customization after application launch.
     }
 

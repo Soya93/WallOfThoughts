@@ -125,7 +125,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4x-A5-2HZ"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="5JH-ez-Lqh">
                             <connections>
-                                <segue destination="OTU-Hb-Cca" kind="showDetail" identifier="finishedDrawing" action="showViewController:sender:" id="oTg-Ty-MVp"/>
+                                <segue destination="eh9-qT-ajY" kind="showDetail" identifier="finishedDrawing" action="showViewController:sender:" id="oCF-1k-IQf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -154,10 +154,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94694010416666663" green="0.94441731770833337" blue="0.97268337673611116" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Place" id="jp5-X5-iGO">
-                        <barButtonItem key="leftBarButtonItem" title="New Thought" id="s1h-iL-zXK"/>
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="LFW-TK-cYd">
+                            <connections>
+                                <action selector="goBack:" destination="7Ad-4x-B9A" id="Csu-zV-Si2"/>
+                                <segue destination="8K0-cI-e01" kind="unwind" unwindAction="unwindToDrawViewControllerWithSender:" id="C3L-ok-TDD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="daG-xv-5xl"/>
                     </navigationItem>
                     <connections>
@@ -165,8 +170,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5D-WO-QZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8K0-cI-e01" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2826" y="252"/>
+            <point key="canvasLocation" x="2880.8000000000002" y="250.52473763118442"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hb8-fJ-BgR">
@@ -187,25 +193,26 @@
             <point key="canvasLocation" x="201" y="252"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="M6N-fW-Vlt">
+        <scene sceneID="KkD-An-uBO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OTU-Hb-Cca" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eh9-qT-ajY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gd6-kw-JGa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z3R-I8-uSV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7Ad-4x-B9A" kind="relationship" relationship="rootViewController" id="pRq-pj-uoY"/>
+                        <segue destination="7Ad-4x-B9A" kind="relationship" relationship="rootViewController" id="so5-rb-pA3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2dw-kH-J5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQe-OQ-8fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="252"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="250.52473763118442"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="25" height="25"/>
         <image name="Eraser" width="25" height="25"/>
         <image name="black" width="33" height="33"/>
         <image name="blue" width="33" height="33"/>

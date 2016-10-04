@@ -17,19 +17,21 @@ class PlaceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(image)
-        imageContainer.image = image
+        
+        
+        if let image = image {
+            imageContainer.frame = CGRect(x: (UIScreen.main.bounds.width/2-image.size.width/8), y: (UIScreen.main.bounds.height/2-image.size.height/8), width: image.size.width/4, height: image.size.height/4)
+            imageContainer.image = image
+        }
+        
         
         let borderLayer  = dashedBorderLayerWithColor(color: UIColor.black.cgColor)
         
         imageContainer.layer.addSublayer(borderLayer)
         
         
-        /*imageContainer.layer.borderWidth = 1
-         imageContainer.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor*/
-        
-        // Do any additional setup after loading the view.
     }
+    
     
     func dashedBorderLayerWithColor(color:CGColor) -> CAShapeLayer {
         
@@ -57,11 +59,8 @@ class PlaceViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func goBack(sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
+    
     
 }
