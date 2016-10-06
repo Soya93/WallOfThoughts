@@ -15,10 +15,15 @@
 		A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C711D9BC63F00546A2B /* DrawableView.swift */; };
 		A35478B41DA3C48300C350FC /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B31DA3C48200C350FC /* DraggableView.swift */; };
 		A35478B61DA404B100C350FC /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B51DA404B100C350FC /* WallViewController.swift */; };
+		A3CA8B5F1DA6B94E00BB1BE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */; };
 		A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */; };
+		DD5F13E8030A4C1ED79F3652 /* Pods_testDrawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testDrawing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D061AE61DE392DD32DAECD /* Pods-testDrawing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDrawing.release.xcconfig"; path = "Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing.release.xcconfig"; sourceTree = "<group>"; };
+		90CFE577D693E2DFF26A823B /* Pods-testDrawing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDrawing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing.debug.xcconfig"; sourceTree = "<group>"; };
 		A30F4C2F1D9BAC2A00546A2B /* testDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +34,7 @@
 		A30F4C711D9BC63F00546A2B /* DrawableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
 		A35478B31DA3C48200C350FC /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		A35478B51DA404B100C350FC /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
+		A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5F13E8030A4C1ED79F3652 /* Pods_testDrawing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				A30F4C311D9BAC2A00546A2B /* testDrawing */,
 				A30F4C301D9BAC2A00546A2B /* Products */,
+				D2F1271EC95FBBA28974E658 /* Pods */,
+				FCF4147C7DB7B9416913B84E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +81,26 @@
 				A30F4C391D9BAC2A00546A2B /* Assets.xcassets */,
 				A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */,
 				A30F4C3E1D9BAC2B00546A2B /* Info.plist */,
+				A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */,
 			);
 			path = testDrawing;
+			sourceTree = "<group>";
+		};
+		D2F1271EC95FBBA28974E658 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90CFE577D693E2DFF26A823B /* Pods-testDrawing.debug.xcconfig */,
+				28D061AE61DE392DD32DAECD /* Pods-testDrawing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FCF4147C7DB7B9416913B84E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A30F4C411D9BAC2B00546A2B /* Build configuration list for PBXNativeTarget "testDrawing" */;
 			buildPhases = (
+				3344520F9C11979CC3822BF6 /* [CP] Check Pods Manifest.lock */,
 				A30F4C2B1D9BAC2900546A2B /* Sources */,
 				A30F4C2C1D9BAC2900546A2B /* Frameworks */,
 				A30F4C2D1D9BAC2900546A2B /* Resources */,
+				B8F266CB2C8510ECB5161ABD /* [CP] Embed Pods Frameworks */,
+				98BB22D63CB5ADBCB5FF51B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,12 +167,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30F4C3D1D9BAC2A00546A2B /* LaunchScreen.storyboard in Resources */,
+				A3CA8B5F1DA6B94E00BB1BE3 /* GoogleService-Info.plist in Resources */,
 				A30F4C3A1D9BAC2A00546A2B /* Assets.xcassets in Resources */,
 				A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3344520F9C11979CC3822BF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		98BB22D63CB5ADBCB5FF51B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8F266CB2C8510ECB5161ABD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A30F4C2B1D9BAC2900546A2B /* Sources */ = {
@@ -272,6 +351,7 @@
 		};
 		A30F4C421D9BAC2B00546A2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90CFE577D693E2DFF26A823B /* Pods-testDrawing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AD9PDVLN6F;
@@ -285,6 +365,7 @@
 		};
 		A30F4C431D9BAC2B00546A2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D061AE61DE392DD32DAECD /* Pods-testDrawing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AD9PDVLN6F;

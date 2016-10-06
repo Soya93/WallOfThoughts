@@ -1,0 +1,6 @@
+framework module Pods_testDrawing {
+  umbrella header "Pods-testDrawing-umbrella.h"
+
+  export *
+  module * { export * }
+}

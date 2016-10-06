@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: (90/255), green: (200/255), blue: (250/255), alpha: 1)
-        // Override point for customization after application launch.
+        FIRApp.configure()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

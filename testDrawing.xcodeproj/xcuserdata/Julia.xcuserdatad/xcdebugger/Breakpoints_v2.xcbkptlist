@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testDrawing/AppDelegate.swift"
-            timestampString = "497175023.977587"
+            timestampString = "497470840.82367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
