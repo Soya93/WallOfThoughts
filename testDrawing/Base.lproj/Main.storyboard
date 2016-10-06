@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,6 +22,10 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-XE-n0y">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="D34-gb-qDM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="beH-TB-lNx"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem image="Eraser" id="C7X-EQ-gug">
                                         <color key="tintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,42 +85,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="LED-1Z-Xgq"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="MC5-XE-n0y" secondAttribute="bottom" id="LET-gc-f8f"/>
-                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="aLf-Bh-t9e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MC5-XE-n0y" secondAttribute="trailing" constant="-20" id="gBL-JW-kl7"/>
-                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="mYg-HN-AWB"/>
-                            <constraint firstItem="MC5-XE-n0y" firstAttribute="top" secondItem="eyL-Ao-bzR" secondAttribute="bottom" id="p2a-Z8-YB2"/>
-                            <constraint firstItem="MC5-XE-n0y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="wi4-8f-BFP"/>
+                            <constraint firstItem="MC5-XE-n0y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5JY-Fd-2Bw"/>
+                            <constraint firstAttribute="bottom" secondItem="eyL-Ao-bzR" secondAttribute="bottom" id="Tyb-4X-RM4"/>
+                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VYe-XM-LC5"/>
+                            <constraint firstItem="MC5-XE-n0y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="aqB-Hk-eg9"/>
+                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qZq-O3-kuY"/>
+                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rDf-N1-WtX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MC5-XE-n0y" secondAttribute="bottom" id="wcO-zJ-W1k"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="eyL-Ao-bzR"/>
-                                <exclude reference="MC5-XE-n0y"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="LET-gc-f8f"/>
-                                <exclude reference="gBL-JW-kl7"/>
-                                <exclude reference="p2a-Z8-YB2"/>
-                                <exclude reference="wi4-8f-BFP"/>
-                                <exclude reference="LED-1Z-Xgq"/>
-                                <exclude reference="aLf-Bh-t9e"/>
-                                <exclude reference="mYg-HN-AWB"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="eyL-Ao-bzR"/>
-                                <include reference="MC5-XE-n0y"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="LET-gc-f8f"/>
-                                <include reference="gBL-JW-kl7"/>
-                                <include reference="p2a-Z8-YB2"/>
-                                <include reference="wi4-8f-BFP"/>
-                                <include reference="LED-1Z-Xgq"/>
-                                <include reference="aLf-Bh-t9e"/>
-                                <include reference="mYg-HN-AWB"/>
                             </mask>
                         </variation>
                     </view>

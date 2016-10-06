@@ -277,7 +277,7 @@
 				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.testDrawing;
+				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthoughts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -290,7 +290,7 @@
 				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.testDrawing;
+				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthoughts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

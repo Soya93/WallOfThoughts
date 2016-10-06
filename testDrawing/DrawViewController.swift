@@ -25,7 +25,7 @@ class DrawViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         self.navigationController?.isToolbarHidden = false
     }
     
     override func didReceiveMemoryWarning() {
