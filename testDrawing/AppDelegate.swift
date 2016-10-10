@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: (90/255), green: (200/255), blue: (250/255), alpha: 1)
         FIRApp.configure()
+        let ref: FIRDatabase = FIRDatabase.database().reference()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

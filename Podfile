@@ -7,5 +7,6 @@ target 'testDrawing' do
 
   # Pods for testDrawing
 pod 'Firebase'
+pod 'Firebase/Database'
 
 end
