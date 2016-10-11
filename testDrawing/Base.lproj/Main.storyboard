@@ -17,92 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyL-Ao-bzR" userLabel="drawableView" customClass="DrawableView" customModule="testDrawing" customModuleProvider="target">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-XE-n0y">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="D34-gb-qDM"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="beH-TB-lNx"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem image="Eraser" id="C7X-EQ-gug">
-                                        <color key="tintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="eraseWithSender:" destination="BYZ-38-t0r" id="N6e-ff-Ppp"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="black" style="plain" id="H4N-xF-5l6" userLabel="black">
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="wKT-nN-Pcn"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="1" image="green" id="Xlb-Jr-jEj" userLabel="green">
-                                        <color key="tintColor" red="0.26102268695831299" green="0.83681917190551758" blue="0.31946933269500732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="WOz-Ij-JDJ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="2" image="lightBlue" id="nhn-Xi-1Vm" userLabel="light blue">
-                                        <color key="tintColor" red="0.2983720600605011" green="0.73470252752304077" blue="0.97413814067840576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="FN3-jD-ENt"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="3" image="blue" id="Scq-gd-7sb" userLabel="blue">
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="BJk-FZ-2el"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="4" image="pink" id="MHf-cR-Zw6" userLabel="pink">
-                                        <color key="tintColor" red="0.98624116182327271" green="0.049929037690162659" blue="0.26609480381011963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="kz5-my-fki"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="5" image="red" id="lrU-Lf-eZI" userLabel="red">
-                                        <color key="tintColor" red="0.98658347129821777" green="0.12904104590415955" blue="0.14572040736675262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="5t0-sl-CrO"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="6" image="orange" id="4F4-SE-3L3" userLabel="orange">
-                                        <color key="tintColor" red="0.99055147171020508" green="0.50925779342651367" blue="0.032983742654323578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="zBB-yE-92D"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem tag="7" image="yellow" id="OvC-xB-PTd" userLabel="yellow">
-                                        <color key="tintColor" red="0.99517929553985596" green="0.76438117027282715" blue="0.036827042698860168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="colorPressedWithSender:" destination="BYZ-38-t0r" id="i1o-bz-Vr4"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="MC5-XE-n0y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5JY-Fd-2Bw"/>
-                            <constraint firstAttribute="bottom" secondItem="eyL-Ao-bzR" secondAttribute="bottom" id="Tyb-4X-RM4"/>
-                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VYe-XM-LC5"/>
-                            <constraint firstItem="MC5-XE-n0y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="aqB-Hk-eg9"/>
-                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qZq-O3-kuY"/>
-                            <constraint firstItem="eyL-Ao-bzR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rDf-N1-WtX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MC5-XE-n0y" secondAttribute="bottom" id="wcO-zJ-W1k"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="eyL-Ao-bzR"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="eyL-Ao-bzR"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New thought" id="P1j-F7-La2">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4x-A5-2HZ">
@@ -116,9 +31,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="drawView" destination="eyL-Ao-bzR" id="IQg-ho-N1m"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="D3y-zN-uxl" userLabel="Exit" sceneMemberID="exit"/>
@@ -231,15 +143,6 @@
     </scenes>
     <resources>
         <image name="Back" width="25" height="25"/>
-        <image name="Eraser" width="25" height="25"/>
         <image name="Thought" width="60" height="60"/>
-        <image name="black" width="33" height="33"/>
-        <image name="blue" width="33" height="33"/>
-        <image name="green" width="33" height="33"/>
-        <image name="lightBlue" width="33" height="33"/>
-        <image name="orange" width="33" height="33"/>
-        <image name="pink" width="33" height="33"/>
-        <image name="red" width="33" height="33"/>
-        <image name="yellow" width="33" height="33"/>
     </resources>
 </document>

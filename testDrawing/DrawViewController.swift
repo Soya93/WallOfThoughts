@@ -10,11 +10,10 @@ import UIKit
 
 class DrawViewController: UIViewController {
     
-    @IBOutlet weak var drawView: DrawableView!
-    
     var image: UIImage?
+    var drawView: DrawableView = DrawableView()
     
-    let color: [String] = ["000000",
+    let colors: [String] = ["000000",
                            "4CD964",
                            "5AC8FA",
                            "007AFF",
@@ -25,13 +24,45 @@ class DrawViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationController?.isToolbarHidden = false
+        drawView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height-44)
+        self.view.addSubview(drawView)
+        self.navigationController?.isToolbarHidden = false
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        drawView.awakeFromNib()
+        setUpToolBar()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-}
+    }
+    
+    func setUpToolBar(){
+        navigationController?.isToolbarHidden = false
+        
+        var toolItems : [UIBarButtonItem] = []
+        
+        let eraseButton: UIBarButtonItem = createBarButtonItem(title: nil, image: #imageLiteral(resourceName: "Eraser"), style: .plain, target: self, selector: #selector(erase(sender:)))
+        
+        toolItems.append(eraseButton)
+        
+        for index in 0..<colors.count {
+            let button : UIBarButtonItem = createBarButtonItem(title: nil, image: #imageLiteral(resourceName: "green"), style: .plain, target: self, selector: #selector(colorPressed(sender:)))
+            
+            button.tintColor = hexStringToUIColor(hex: colors[index])
+            button.tag = index
+            
+            toolItems.append(button)
+        }
+        
+        
+        navigationController?.toolbar.setItems(toolItems, animated: false)
+        
+    }
 
     @IBAction func colorPressed(sender: UIBarButtonItem) {
         var id = 0
@@ -40,7 +71,7 @@ class DrawViewController: UIViewController {
         }
         
         
-        drawView.drawColor = self.hexStringToUIColor(hex: color[id])
+        drawView.drawColor = self.hexStringToUIColor(hex: colors[id])
         drawView.drawWidth = 8.0
         
     }
@@ -57,7 +88,7 @@ class DrawViewController: UIViewController {
     
     func saveThought(){
         UIGraphicsBeginImageContextWithOptions(drawView.bounds.size, drawView.isOpaque, 0.0)
-        drawView!.drawHierarchy(in: drawView.bounds, afterScreenUpdates: false)
+        drawView.drawHierarchy(in: drawView.bounds, afterScreenUpdates: false)
         let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.image = snapshotImageFromMyView
@@ -110,6 +141,28 @@ class DrawViewController: UIViewController {
         }
         return nil
     }
+    
+    func createBarButtonItem(title: String?, image : UIImage?, style : UIBarButtonItemStyle?, target : AnyObject?, selector : Selector?) -> UIBarButtonItem{
+        let button = UIBarButtonItem()
+        if let theTitle = title {
+            button.title = theTitle
+        }
+        if let theImage = image {
+            button.image = theImage
+        }
+        if let theStyle = style{
+            button.style = theStyle
+        }
+        if let theTarget = target {
+            button.target = theTarget
+        }
+        if let theSelector = selector {
+            button.action = theSelector
+        }
+        return button
+    }
+    
+    
  
 }
 
