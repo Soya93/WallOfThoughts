@@ -60,24 +60,6 @@ class PlaceViewController: GLKViewController {
         
     }
     
-    @IBAction func done(_ sender: UIBarButtonItem) {
-        print("image center:" , imageContainer.center)
-        print("panorama center:" , panoramaView?.imagePixel(atScreenLocation: imageContainer.center))
-        
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
-        
-        let xPos : String = String(describing: panoramaView?.imagePixel(atScreenLocation: imageContainer.center).x)
-        let yPos : String = String(describing: panoramaView?.imagePixel(atScreenLocation: imageContainer.center).y)
-        let date: String = String(describing: Int(Date().timeIntervalSince1970*10000))
-        let uploadImage: String = (UIImagePNGRepresentation(image!)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters))!
-        
-        
-        
-        ref.child("images").child(date).setValue(["positionX": xPos, "positionY": yPos, "image": uploadImage])
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -85,6 +67,22 @@ class PlaceViewController: GLKViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         imageContainer.removeFromSuperview()
         self.view = GLKView()
+        
+        if segue.identifier == "showWall" {
+            //Upload image
+            var ref: FIRDatabaseReference!
+            ref = FIRDatabase.database().reference()
+            
+            
+           let xPos : String = String(describing: panoramaView!.imagePixel(atScreenLocation: imageContainer.center).x)
+            let yPos : String = String(describing: panoramaView!.imagePixel(atScreenLocation: imageContainer.center).y)
+            let uploadImage: String = (UIImagePNGRepresentation(image!)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters))!
+            
+            let imageInfo = ["positionX": xPos, "positionY": yPos, "image": uploadImage]
+            
+            let key = ref.child("images").childByAutoId()
+            key.setValue(imageInfo)
+        }
     }
     
     

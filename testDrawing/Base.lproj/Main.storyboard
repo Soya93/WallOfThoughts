@@ -66,6 +66,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Done" id="daG-xv-5xl">
                             <connections>
                                 <action selector="done:" destination="7Ad-4x-B9A" id="o6v-Vs-tm2"/>
+                                <segue destination="5Ln-I0-sEV" kind="presentation" identifier="showWall" id="0vL-Pe-pFV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

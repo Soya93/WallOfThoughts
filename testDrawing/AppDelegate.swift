@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: (90/255), green: (200/255), blue: (250/255), alpha: 1)
         FIRApp.configure()
+        let panoramaView = PanoramaView.shared()
+        panoramaView?.setImage(UIImage(named: "park_2048.jpg"))
+        panoramaView?.touchToPan = false          // Use touch input to pan
+        panoramaView?.orientToDevice = true     // Use motion sensors to pan
+        panoramaView?.pinchToZoom = false         // Use pinch gesture to zoom
+        panoramaView?.showTouches = true         // Show touches
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

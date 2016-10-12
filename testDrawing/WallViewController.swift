@@ -7,6 +7,7 @@
 //
 import GLKit
 import UIKit
+import FirebaseDatabase
 
 class WallViewController: GLKViewController {
     
@@ -14,11 +15,7 @@ class WallViewController: GLKViewController {
     var button : UIButton = UIButton()
     
     override func viewDidLoad() {
-        panoramaView?.setImage(UIImage(named: "park_2048.jpg"))
-        panoramaView?.touchToPan = false          // Use touch input to pan
-        panoramaView?.orientToDevice = true     // Use motion sensors to pan
-        panoramaView?.pinchToZoom = false         // Use pinch gesture to zoom
-        panoramaView?.showTouches = true         // Show touches
+        
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
@@ -31,6 +28,8 @@ class WallViewController: GLKViewController {
         button.setImage(#imageLiteral(resourceName: "Thought"), for: .normal)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+        
+        addImages();
     }
     
     func buttonAction(sender: UIButton!) {
@@ -59,6 +58,35 @@ class WallViewController: GLKViewController {
     
     @IBAction func unwindToWallViewController(sender: UIStoryboardSegue) {
         //Do nothing
+    }
+    
+    private func addImages() {
+        let ref = FIRDatabase.database().reference().child("images")
+        print("ADDING IMAGES")
+        
+        
+        // Listen for new comments in the Firebase database
+       ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let x : CGFloat = CGFloat(Float(snapshot.childSnapshot(forPath: "positionX").value as! String)!)
+            let y : CGFloat = CGFloat(Float(snapshot.childSnapshot(forPath: "positionY").value as! String)!)
+            let image = snapshot.childSnapshot(forPath: "image").value
+            
+            let base64EncodedString = image
+            let imageData = NSData(base64Encoded: base64EncodedString as! String,
+                                   options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+            let decodedImage = UIImage(data:imageData! as Data)
+        
+            let point = self.panoramaView?.imagePixel(atScreenLocation: CGPoint(x: x, y: y))
+            print(point)
+            let imageContainer = UIImageView(frame: CGRect(x: point!.x, y: point!.y, width: CGFloat(decodedImage!.size.width), height: CGFloat(decodedImage!.size.height)))
+            imageContainer.image = decodedImage
+            self.view.addSubview(imageContainer)
+            
+           
+            
+        })
+        
+        
     }
     
     
