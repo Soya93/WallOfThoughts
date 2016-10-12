@@ -58,10 +58,7 @@ class DrawViewController: UIViewController {
             
             toolItems.append(button)
         }
-        
-        
         navigationController?.toolbar.setItems(toolItems, animated: false)
-        
     }
 
     @IBAction func colorPressed(sender: UIBarButtonItem) {
@@ -93,8 +90,6 @@ class DrawViewController: UIViewController {
         UIGraphicsEndImageContext()
         self.image = snapshotImageFromMyView
         self.image = imageByMakingWhiteBackgroundTransparent()
-        
-        
     }
    
 
