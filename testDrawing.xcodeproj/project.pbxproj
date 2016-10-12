@@ -12,16 +12,6 @@
 		1858F0881DAE892D00AC2986 /* equirectangular-projection-lines.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0831DAE892D00AC2986 /* equirectangular-projection-lines.png */; };
 		1858F0891DAE892D00AC2986 /* button-screen-double.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0841DAE892D00AC2986 /* button-screen-double.png */; };
 		1858F08A1DAE892D00AC2986 /* button-screen-single.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0851DAE892D00AC2986 /* button-screen-single.png */; };
-		1858F09C1DAE894300AC2986 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F08B1DAE894300AC2986 /* 114.png */; };
-		1858F09D1DAE894300AC2986 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F08C1DAE894300AC2986 /* 120.png */; };
-		1858F09E1DAE894300AC2986 /* 144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F08D1DAE894300AC2986 /* 144.png */; };
-		1858F09F1DAE894300AC2986 /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F08E1DAE894300AC2986 /* 152.png */; };
-		1858F0A01DAE894300AC2986 /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F08F1DAE894300AC2986 /* 57.png */; };
-		1858F0A11DAE894300AC2986 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0901DAE894300AC2986 /* 60.png */; };
-		1858F0A21DAE894300AC2986 /* 72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0911DAE894300AC2986 /* 72.png */; };
-		1858F0A31DAE894300AC2986 /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0921DAE894300AC2986 /* 76.png */; };
-		1858F0A41DAE894300AC2986 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0931DAE894300AC2986 /* icon.png */; };
-		1858F0A61DAE894300AC2986 /* Panorama-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0961DAE894300AC2986 /* Panorama-Info.plist */; };
 		1858F0A81DAE894300AC2986 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F09A1DAE894300AC2986 /* Default-568h@2x.png */; };
 		1858F0AA1DAE896700AC2986 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0A91DAE896700AC2986 /* OpenGLES.framework */; };
 		1858F0AC1DAE896C00AC2986 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0AB1DAE896C00AC2986 /* GLKit.framework */; };
@@ -47,22 +37,12 @@
 		1858F07E1DAE88DA00AC2986 /* testDrawing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testDrawing-Bridging-Header.h"; sourceTree = "<group>"; };
 		1858F07F1DAE88DB00AC2986 /* PanoramaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanoramaView.h; sourceTree = "<group>"; };
 		1858F0801DAE88DB00AC2986 /* PanoramaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanoramaView.m; sourceTree = "<group>"; };
-		1858F0821DAE892D00AC2986 /* park_2048.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = park_2048.jpg; path = ../../../Documents/GitHub/WallOfThoughts/testDrawing/images/park_2048.jpg; sourceTree = "<group>"; };
-		1858F0831DAE892D00AC2986 /* equirectangular-projection-lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "equirectangular-projection-lines.png"; path = "../../../Documents/GitHub/WallOfThoughts/testDrawing/images/equirectangular-projection-lines.png"; sourceTree = "<group>"; };
-		1858F0841DAE892D00AC2986 /* button-screen-double.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-screen-double.png"; path = "../../../Documents/GitHub/WallOfThoughts/testDrawing/images/button-screen-double.png"; sourceTree = "<group>"; };
-		1858F0851DAE892D00AC2986 /* button-screen-single.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-screen-single.png"; path = "../../../Documents/GitHub/WallOfThoughts/testDrawing/images/button-screen-single.png"; sourceTree = "<group>"; };
-		1858F08B1DAE894300AC2986 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 114.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/114.png; sourceTree = "<group>"; };
-		1858F08C1DAE894300AC2986 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/120.png; sourceTree = "<group>"; };
-		1858F08D1DAE894300AC2986 /* 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 144.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/144.png; sourceTree = "<group>"; };
-		1858F08E1DAE894300AC2986 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 152.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/152.png; sourceTree = "<group>"; };
-		1858F08F1DAE894300AC2986 /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 57.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/57.png; sourceTree = "<group>"; };
-		1858F0901DAE894300AC2986 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 60.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/60.png; sourceTree = "<group>"; };
-		1858F0911DAE894300AC2986 /* 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 72.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/72.png; sourceTree = "<group>"; };
-		1858F0921DAE894300AC2986 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 76.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/76.png; sourceTree = "<group>"; };
-		1858F0931DAE894300AC2986 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../../Documents/GitHub/WallOfThoughts/testDrawing/icons/icon.png; sourceTree = "<group>"; };
-		1858F0961DAE894300AC2986 /* Panorama-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Panorama-Info.plist"; path = "../../../Documents/GitHub/WallOfThoughts/testDrawing/Panorama-Info.plist"; sourceTree = "<group>"; };
-		1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Panorama-Prefix.pch"; path = "../../../Documents/GitHub/WallOfThoughts/testDrawing/Panorama-Prefix.pch"; sourceTree = "<group>"; };
-		1858F09A1DAE894300AC2986 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../Documents/GitHub/WallOfThoughts/testDrawing/images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		1858F0821DAE892D00AC2986 /* park_2048.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = park_2048.jpg; path = "/Users/Julia/Google Drive/Chalmers/Skola/Interaction Design/CIU196 Mobile Computing/Project mobile computing/test/testDrawing/testDrawing/images/park_2048.jpg"; sourceTree = "<absolute>"; };
+		1858F0831DAE892D00AC2986 /* equirectangular-projection-lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "equirectangular-projection-lines.png"; path = "/Users/Julia/Google Drive/Chalmers/Skola/Interaction Design/CIU196 Mobile Computing/Project mobile computing/test/testDrawing/testDrawing/images/equirectangular-projection-lines.png"; sourceTree = "<absolute>"; };
+		1858F0841DAE892D00AC2986 /* button-screen-double.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-screen-double.png"; path = "/Users/Julia/Google Drive/Chalmers/Skola/Interaction Design/CIU196 Mobile Computing/Project mobile computing/test/testDrawing/testDrawing/images/button-screen-double.png"; sourceTree = "<absolute>"; };
+		1858F0851DAE892D00AC2986 /* button-screen-single.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-screen-single.png"; path = "/Users/Julia/Google Drive/Chalmers/Skola/Interaction Design/CIU196 Mobile Computing/Project mobile computing/test/testDrawing/testDrawing/images/button-screen-single.png"; sourceTree = "<absolute>"; };
+		1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Panorama-Prefix.pch"; path = "testDrawing/Panorama-Prefix.pch"; sourceTree = "<group>"; };
+		1858F09A1DAE894300AC2986 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "/Users/Julia/Google Drive/Chalmers/Skola/Interaction Design/CIU196 Mobile Computing/Project mobile computing/test/testDrawing/testDrawing/images/Default-568h@2x.png"; sourceTree = "<absolute>"; };
 		1858F0A91DAE896700AC2986 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		1858F0AB1DAE896C00AC2986 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		1858F0AD1DAE897200AC2986 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -120,15 +100,6 @@
 		1858F0941DAE894300AC2986 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				1858F08B1DAE894300AC2986 /* 114.png */,
-				1858F08C1DAE894300AC2986 /* 120.png */,
-				1858F08D1DAE894300AC2986 /* 144.png */,
-				1858F08E1DAE894300AC2986 /* 152.png */,
-				1858F08F1DAE894300AC2986 /* 57.png */,
-				1858F0901DAE894300AC2986 /* 60.png */,
-				1858F0911DAE894300AC2986 /* 72.png */,
-				1858F0921DAE894300AC2986 /* 76.png */,
-				1858F0931DAE894300AC2986 /* icon.png */,
 			);
 			path = icons;
 			sourceTree = "<group>";
@@ -137,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				1858F0941DAE894300AC2986 /* icons */,
-				1858F0961DAE894300AC2986 /* Panorama-Info.plist */,
 				1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */,
 				1858F09A1DAE894300AC2986 /* Default-568h@2x.png */,
 			);
@@ -245,7 +215,7 @@
 				TargetAttributes = {
 					A30F4C2E1D9BAC2900546A2B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = R584P9J2XH;
+						DevelopmentTeam = AD9PDVLN6F;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -274,24 +244,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1858F0A21DAE894300AC2986 /* 72.png in Resources */,
-				1858F0A01DAE894300AC2986 /* 57.png in Resources */,
-				1858F09C1DAE894300AC2986 /* 114.png in Resources */,
 				A30F4C3D1D9BAC2A00546A2B /* LaunchScreen.storyboard in Resources */,
-				1858F0A11DAE894300AC2986 /* 60.png in Resources */,
-				1858F0A61DAE894300AC2986 /* Panorama-Info.plist in Resources */,
 				1858F0871DAE892D00AC2986 /* park_2048.jpg in Resources */,
-				1858F0A31DAE894300AC2986 /* 76.png in Resources */,
-				1858F09E1DAE894300AC2986 /* 144.png in Resources */,
 				1858F0B61DAE8DD000AC2986 /* InfoPlist.strings in Resources */,
 				1858F0891DAE892D00AC2986 /* button-screen-double.png in Resources */,
 				1858F08A1DAE892D00AC2986 /* button-screen-single.png in Resources */,
-				1858F09F1DAE894300AC2986 /* 152.png in Resources */,
 				1858F0A81DAE894300AC2986 /* Default-568h@2x.png in Resources */,
 				A3CA8B5F1DA6B94E00BB1BE3 /* GoogleService-Info.plist in Resources */,
-				1858F0A41DAE894300AC2986 /* icon.png in Resources */,
 				A30F4C3A1D9BAC2A00546A2B /* Assets.xcassets in Resources */,
-				1858F09D1DAE894300AC2986 /* 120.png in Resources */,
 				A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */,
 				1858F0881DAE892D00AC2986 /* equirectangular-projection-lines.png in Resources */,
 			);
@@ -481,10 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R584P9J2XH;
+				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.testDrawing1;
+				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthoughts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "testDrawing/testDrawing-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -499,10 +459,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R584P9J2XH;
+				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.testDrawing1;
+				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthoughts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "testDrawing/testDrawing-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
