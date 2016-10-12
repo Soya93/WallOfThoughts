@@ -45,7 +45,7 @@
                         <viewControllerLayoutGuide type="top" id="KC7-ha-jCn"/>
                         <viewControllerLayoutGuide type="bottom" id="Cc7-AK-eZP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wBv-XI-80M" customClass="GLKView">
+                    <view key="view" contentMode="scaleToFill" id="wBv-XI-80M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -63,11 +63,7 @@
                                 <segue destination="8K0-cI-e01" kind="unwind" unwindAction="unwindToDrawViewControllerWithSender:" id="C3L-ok-TDD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="daG-xv-5xl">
-                            <connections>
-                                <action selector="done:" destination="7Ad-4x-B9A" id="iPP-Gc-hTm"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="daG-xv-5xl"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageContainer" destination="HWi-Xb-dg2" id="eGu-vl-AVk"/>
@@ -86,14 +82,23 @@
                         <viewControllerLayoutGuide type="top" id="Tff-9A-28e"/>
                         <viewControllerLayoutGuide type="bottom" id="nGu-kD-jVC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VbG-MT-KEO" customClass="GLKView">
+                    <view key="view" contentMode="scaleToFill" id="VbG-MT-KEO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrF-NP-5nm">
+                                <state key="normal" backgroundImage="Thought"/>
+                                <connections>
+                                    <segue destination="C0f-Kg-wkR" kind="show" id="YJV-XT-7ni"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nGu-kD-jVC" firstAttribute="top" secondItem="hrF-NP-5nm" secondAttribute="bottom" constant="50" id="P3h-EN-4P0"/>
+                            <constraint firstItem="hrF-NP-5nm" firstAttribute="centerX" secondItem="VbG-MT-KEO" secondAttribute="centerX" id="k2d-XA-Gqr"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <segue destination="C0f-Kg-wkR" kind="show" identifier="newThought" id="UdA-qS-jEz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivI-Zk-hLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,5 +143,6 @@
     </scenes>
     <resources>
         <image name="Back" width="25" height="25"/>
+        <image name="Thought" width="60" height="60"/>
     </resources>
 </document>
