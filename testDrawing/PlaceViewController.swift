@@ -6,32 +6,35 @@
 //  Created by Julia Friberg on 2016-09-28.
 //  Copyright © 2016 Julia Friberg. All rights reserved.
 //
-
+import GLKit
 import UIKit
 
-class PlaceViewController: UIViewController {
+class PlaceViewController: GLKViewController {
     
     @IBOutlet weak var imageContainer: UIImageView!
     
     var image: UIImage?
+    var panoramaView = PanoramaView.shared()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //Thought image
         if let image = image {
             imageContainer.frame = CGRect(x: (UIScreen.main.bounds.width/2-image.size.width/8), y: (UIScreen.main.bounds.height/2-image.size.height/8), width: image.size.width/4, height: image.size.height/4)
             imageContainer.image = image
         }
-        
-        
         let borderLayer  = dashedBorderLayerWithColor(color: UIColor.black.cgColor)
-        
         imageContainer.layer.addSublayer(borderLayer)
+        imageContainer.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         
-        
+        self.view = panoramaView
+        self.view.addSubview(imageContainer)
     }
     
+    override func glkView(_ view: GLKView, drawIn rect: CGRect) {
+        panoramaView?.draw()
+    }
     
     func dashedBorderLayerWithColor(color:CGColor) -> CAShapeLayer {
         
@@ -56,9 +59,18 @@ class PlaceViewController: UIViewController {
         
     }
     
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        print("image center:" , imageContainer.center)
+        print("panorama center:" , panoramaView?.imagePixel(atScreenLocation: imageContainer.center))
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        imageContainer.removeFromSuperview()
+        self.view = GLKView()
     }
     
     
