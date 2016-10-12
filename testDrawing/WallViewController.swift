@@ -6,17 +6,36 @@
 //  Copyright © 2016 Julia Friberg. All rights reserved.
 //
 
-import UIKit
-import CoreLocation
-import CoreMotion
-
-class WallViewController: UIViewController {
-
-   
+class WallViewController: GLKViewController {
+    
+    var panoramaView = PanoramaView.shared()
+    var button : UIButton = UIButton()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        panoramaView?.setImage(UIImage(named: "park_2048.jpg"))
+        panoramaView?.touchToPan = false          // Use touch input to pan
+        panoramaView?.orientToDevice = true     // Use motion sensors to pan
+        panoramaView?.pinchToZoom = false         // Use pinch gesture to zoom
+        panoramaView?.showTouches = true         // Show touches
+    }
+    
+    override func glkView(_ view: GLKView, drawIn rect: CGRect) {
+        panoramaView?.draw()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.view = panoramaView
+        button = UIButton(frame: CGRect(x: (Int(self.view.frame.width/2) - (#imageLiteral(resourceName: "Thought").cgImage?.width)!/2), y: (Int(self.view.frame.height) - (#imageLiteral(resourceName: "Thought").cgImage?.height)!), width: (#imageLiteral(resourceName: "Thought").cgImage?.width)!, height: (#imageLiteral(resourceName: "Thought").cgImage?.height)!))
+        button.setImage(#imageLiteral(resourceName: "Thought"), for: .normal)
+        self.view.addSubview(button)
+        button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+    }
+    
+    func buttonAction(sender: UIButton!) {
+        button.removeFromSuperview()
+        self.view = GLKView()
+        performSegue(withIdentifier: "newThought", sender: sender)
+        print("Button tapped")
     }
     
     
