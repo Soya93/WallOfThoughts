@@ -14,22 +14,26 @@ class WallViewController: GLKViewController {
     var panoramaView = PanoramaView.shared()
     var button : UIButton = UIButton()
     
+    
+    
     override func viewDidLoad() {
         
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
         panoramaView?.draw()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.view = panoramaView
+        addImages()
         button = UIButton(frame: CGRect(x: (Int(self.view.frame.width/2) - (#imageLiteral(resourceName: "Thought").cgImage?.width)!/2), y: (Int(self.view.frame.height) - (#imageLiteral(resourceName: "Thought").cgImage?.height)!), width: (#imageLiteral(resourceName: "Thought").cgImage?.width)!, height: (#imageLiteral(resourceName: "Thought").cgImage?.height)!))
         button.setImage(#imageLiteral(resourceName: "Thought"), for: .normal)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
         
-        addImages();
+        
     }
     
     func buttonAction(sender: UIButton!) {
@@ -76,9 +80,8 @@ class WallViewController: GLKViewController {
                                    options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
             let decodedImage = UIImage(data:imageData! as Data)
         
-            let point = self.panoramaView?.imagePixel(atScreenLocation: CGPoint(x: x, y: y))
-            print(point)
-            let imageContainer = UIImageView(frame: CGRect(x: point!.x, y: point!.y, width: CGFloat(decodedImage!.size.width), height: CGFloat(decodedImage!.size.height)))
+     
+            let imageContainer = UIImageView(frame: CGRect(x: 20, y: 20, width: CGFloat(decodedImage!.size.width), height: CGFloat(decodedImage!.size.height)))
             imageContainer.image = decodedImage
             self.view.addSubview(imageContainer)
             
