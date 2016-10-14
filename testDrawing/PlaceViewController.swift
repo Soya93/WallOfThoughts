@@ -73,12 +73,16 @@ class PlaceViewController: GLKViewController {
             var ref: FIRDatabaseReference!
             ref = FIRDatabase.database().reference()
             
+            let x = imageContainer.center.x - imageContainer.frame.size.width/2
+            let y = imageContainer.center.y - imageContainer.frame.size.height/2
+            let vector = panoramaView?.vector(fromScreenLocation: CGPoint(x: x, y: y))
             
-           let xPos : String = String(describing: panoramaView!.imagePixel(atScreenLocation: imageContainer.center).x)
-            let yPos : String = String(describing: panoramaView!.imagePixel(atScreenLocation: imageContainer.center).y)
+            let xPos : String = String(describing: vector!.v.0)
+            let yPos : String = String(describing: vector!.v.1)
+            let zPos : String = String(describing: vector!.v.2)
             let uploadImage: String = (UIImagePNGRepresentation(image!)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters))!
             
-            let imageInfo = ["positionX": xPos, "positionY": yPos, "image": uploadImage]
+            let imageInfo = ["x": xPos, "y": yPos, "z": zPos, "image": uploadImage]
             
             let key = ref.child("images").childByAutoId()
             key.setValue(imageInfo)

@@ -11,6 +11,8 @@
  */
 #import <GLKit/GLKit.h>
 
+@class Image;
+
 @interface PanoramaView : GLKView
 
 + (PanoramaView *)shared;
@@ -119,5 +121,9 @@
  * @return YES if touch is inside CGRect, NO otherwise
  */
 -(BOOL) touchInRect:(CGRect)rect;
+
+-(BOOL) computeScreenLocation:(CGPoint*)location fromVector:(GLKVector3)vector inAttitude:(GLKMatrix4)matrix;
+
+-(void) addImage:(Image*)image;
 
 @end

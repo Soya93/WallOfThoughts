@@ -21,6 +21,7 @@ class WallViewController: GLKViewController {
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
+        
         panoramaView?.draw()
         
     }
@@ -71,19 +72,18 @@ class WallViewController: GLKViewController {
         
         // Listen for new comments in the Firebase database
        ref.observe(.childAdded, with: { (snapshot) -> Void in
-            let x : CGFloat = CGFloat(Float(snapshot.childSnapshot(forPath: "positionX").value as! String)!)
-            let y : CGFloat = CGFloat(Float(snapshot.childSnapshot(forPath: "positionY").value as! String)!)
+            let x : Float = Float(snapshot.childSnapshot(forPath: "x").value as! String)!
+            let y : Float = Float(snapshot.childSnapshot(forPath: "y").value as! String)!
+            let z : Float = Float(snapshot.childSnapshot(forPath: "z").value as! String)!
+            let pos : GLKVector3 = GLKVector3Make(x, y, z)
             let image = snapshot.childSnapshot(forPath: "image").value
-            
+        
             let base64EncodedString = image
             let imageData = NSData(base64Encoded: base64EncodedString as! String,
                                    options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
             let decodedImage = UIImage(data:imageData! as Data)
-        
-     
-            let imageContainer = UIImageView(frame: CGRect(x: 20, y: 20, width: CGFloat(decodedImage!.size.width), height: CGFloat(decodedImage!.size.height)))
-            imageContainer.image = decodedImage
-            self.view.addSubview(imageContainer)
+            let finishedImage : Image = Image(pos: pos, imageView: UIImageView(image: decodedImage!))
+            self.panoramaView?.add(finishedImage)
             
            
             

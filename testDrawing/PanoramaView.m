@@ -10,6 +10,7 @@
 #import <OpenGLES/ES1/gl.h>
 #import <GLKit/GLKit.h>
 #import "PanoramaView.h"
+#import "testDrawing-Swift.h"
 
 #define FPS 60
 #define FOV_MIN 1
@@ -49,6 +50,9 @@ GLKQuaternion GLKQuaternionFromTwoVectors(GLKVector3 u, GLKVector3 v){
     GLKMatrix4 _projectionMatrix, _attitudeMatrix, _offsetMatrix;
     float _aspectRatio;
     GLfloat circlePoints[64*3];  // meridian lines
+    CGPoint buttonLocation;
+    UIButton *button;
+    NSMutableArray<Image *> *images;
 }
 @end
 
@@ -158,6 +162,8 @@ static PanoramaView *sharedPanoramaView = nil;
     _offsetMatrix = GLKMatrix4Identity;
     [self customGL];
     [self makeLatitudeLines];
+    
+    images = [NSMutableArray new];
 }
 -(void)rebuildProjectionMatrix{
     glMatrixMode(GL_PROJECTION);
@@ -212,9 +218,9 @@ static PanoramaView *sharedPanoramaView = nil;
     //		[meridians execute];  // semi-transparent texture overlay (15° meridian lines)
     
     //TODO: add any objects here to make them a part of the virtual reality
-    //		glPushMatrix();
-    //			// object code
-    //		glPopMatrix();
+    		//glPushMatrix();
+    			// object code
+    		//glPopMatrix();
     
     // touch lines
     if(_showTouches && _numberOfTouches){
@@ -277,7 +283,25 @@ static PanoramaView *sharedPanoramaView = nil;
                                  -_attitudeMatrix.m22);
     _lookAzimuth = atan2f(_lookVector.x, -_lookVector.z);
     _lookAltitude = asinf(_lookVector.y);
+    
+    for (Image* image in images) {
+        GLKVector3 position = [image getPos];
+        CGPoint imageLocation = [self screenLocationFromVector:position];
+        
+        if (imageLocation.x == imageLocation.x){
+            [[image getImageView] setFrame:CGRectMake(imageLocation.x, imageLocation.y, [image getImageView].image.size.width/4, [image getImageView].image.size.height/4)];
+        }
+        [self addSubview:[image getImageView]];
+
+    }
+    
+    
 }
+
+-(void) addImage:(Image*)image {
+    [images addObject:image];
+}
+
 -(CGPoint) imagePixelAtScreenLocation:(CGPoint)point{
     return [self imagePixelFromVector:[self vectorFromScreenLocation:point inAttitude:_attitudeMatrix]];
 }
