@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: (90/255), green: (200/255), blue: (250/255), alpha: 1)
         FIRApp.configure()
         let panoramaView = PanoramaView.shared()
-        panoramaView?.setImage(UIImage(named: "park_2048.jpg"))
+        panoramaView?.setImage(UIImage(named: "park_2048.png"))
         panoramaView?.touchToPan = false          // Use touch input to pan
         panoramaView?.orientToDevice = true     // Use motion sensors to pan
         panoramaView?.pinchToZoom = false         // Use pinch gesture to zoom
@@ -47,7 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    
 
 }
 

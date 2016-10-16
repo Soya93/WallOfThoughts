@@ -8,33 +8,56 @@
 import GLKit
 import UIKit
 import FirebaseDatabase
+import AVFoundation
 
 class WallViewController: GLKViewController {
     
     var panoramaView = PanoramaView.shared()
     var button : UIButton = UIButton()
-    
-    
+    var previewLayer = AVCaptureVideoPreviewLayer()
     
     override func viewDidLoad() {
+        //capture video input in an AVCaptureLayerVideoPreviewLayer
+        let captureSession = AVCaptureSession()
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         
+        if let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) {
+            do {
+                let videoIn = try AVCaptureDeviceInput(device: videoDevice)
+                if (captureSession.canAddInput(videoIn as AVCaptureInput)){
+                    captureSession.addInput(videoIn as AVCaptureDeviceInput)
+                }
+            } catch let error as NSError {
+                // Handle any errors
+                print(error)
+                print("Failed add video input.")
+            }
+            
+        } else {
+            print("Failed to create video capture device.")
+        }
+        captureSession.startRunning()
+        
+        //add AVCaptureVideoPreviewLayer as sublayer of self.view.layer
+        previewLayer.frame = self.view.bounds
+       
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
-        
         panoramaView?.draw()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.view = panoramaView
+       self.view.backgroundColor = UIColor.clear
+       self.view = panoramaView
+       self.view.layer.addSublayer(previewLayer)
+        
         addImages()
         button = UIButton(frame: CGRect(x: (Int(self.view.frame.width/2) - (#imageLiteral(resourceName: "Thought").cgImage?.width)!/2), y: (Int(self.view.frame.height) - (#imageLiteral(resourceName: "Thought").cgImage?.height)!), width: (#imageLiteral(resourceName: "Thought").cgImage?.width)!, height: (#imageLiteral(resourceName: "Thought").cgImage?.height)!))
         button.setImage(#imageLiteral(resourceName: "Thought"), for: .normal)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
-        
-        
     }
     
     func buttonAction(sender: UIButton!) {
@@ -84,14 +107,6 @@ class WallViewController: GLKViewController {
             let decodedImage = UIImage(data:imageData! as Data)
             let finishedImage : Image = Image(pos: pos, imageView: UIImageView(image: decodedImage!))
             self.panoramaView?.add(finishedImage)
-            
-           
-            
         })
-        
-        
     }
-    
-    
-    
 }

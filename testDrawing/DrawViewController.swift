@@ -66,8 +66,6 @@ class DrawViewController: UIViewController {
         if sender.tag >= 0 || sender.tag <= 7 {
             id = sender.tag
         }
-        
-        
         drawView.drawColor = self.hexStringToUIColor(hex: colors[id])
         drawView.drawWidth = 8.0
         
@@ -156,8 +154,5 @@ class DrawViewController: UIViewController {
         }
         return button
     }
-    
-    
- 
 }
 

@@ -87,8 +87,5 @@ class PlaceViewController: GLKViewController {
             let key = ref.child("images").childByAutoId()
             key.setValue(imageInfo)
         }
-    }
-    
-    
-    
+    }  
 }
