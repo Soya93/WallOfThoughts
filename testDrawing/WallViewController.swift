@@ -56,6 +56,13 @@ class WallViewController: GLKViewController {
         addImages()
         button = UIButton(frame: CGRect(x: (Int(self.view.frame.width/2) - (#imageLiteral(resourceName: "Thought").cgImage?.width)!/2), y: (Int(self.view.frame.height) - (#imageLiteral(resourceName: "Thought").cgImage?.height)!), width: (#imageLiteral(resourceName: "Thought").cgImage?.width)!, height: (#imageLiteral(resourceName: "Thought").cgImage?.height)!))
         button.setImage(#imageLiteral(resourceName: "Thought"), for: .normal)
+        // Shadow and Radius
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
+        button.layer.shadowOffset = CGSize(width:0.0, height:3.0)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 0.7
+        button.layer.masksToBounds = false
+        button.layer.cornerRadius = 4.0
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
     }
