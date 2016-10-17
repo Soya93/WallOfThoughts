@@ -13,7 +13,7 @@ class DrawViewController: UIViewController {
     var image: UIImage?
     var drawView: DrawableView = DrawableView()
     
-    var toolItems: [UIBarButtonItem] = []
+    var toolItems: [UIButton] = []
     var chosenButtonIndex : Int = 1
     
     let colors: [String] = ["000000",
@@ -29,13 +29,14 @@ class DrawViewController: UIViewController {
         super.viewDidLoad()
         drawView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height-44)
         self.view.addSubview(drawView)
-        self.navigationController?.isToolbarHidden = false
+        setUpToolBar()
+        //self.navigationController?.isToolbarHidden = false
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         drawView.awakeFromNib()
-        setUpToolBar()
+        
         
     }
     
@@ -45,51 +46,69 @@ class DrawViewController: UIViewController {
     }
     
     func setUpToolBar(){
-        navigationController?.isToolbarHidden = false
+        
+        let toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-44), width: self.view.frame.width, height: 44))
+        let scrollView = UIScrollView()
+        scrollView.frame.size.width = toolbarView.frame.width
+        scrollView.frame.size.height = toolbarView.frame.height
+        toolbarView.addSubview(scrollView)
+        self.view.addSubview(toolbarView)
+        
+        
         toolItems = []
         chosenButtonIndex = 1
-        let eraseButton: UIBarButtonItem = createBarButtonItem(title: nil, image: #imageLiteral(resourceName: "erase"), style: .plain, target: self, selector: #selector(erase(sender:)))
+        let frame1 = CGRect(x: 0, y: 0 , width: 45, height: 45 )
+        let eraseButton = UIButton(type: UIButtonType.system)
+        eraseButton.frame = frame1
+        eraseButton.setImage(#imageLiteral(resourceName: "erase"), for: .normal)
         eraseButton.tintColor = hexStringToUIColor(hex: colors[2])
+        eraseButton.addTarget(self, action:#selector(self.erase(sender:)), for: .touchUpInside)
+
         
         toolItems.append(eraseButton)
+        scrollView.addSubview(eraseButton)
         
-        for index in 0..<colors.count {
-            let button : UIBarButtonItem = createBarButtonItem(title: nil, image: #imageLiteral(resourceName: "green"), style: .plain, target: self, selector: #selector(colorPressed(sender:)))
-            
-            button.tintColor = hexStringToUIColor(hex: colors[index])
+         for index in 1...colors.count {
+            let frame1 = CGRect(x: 0 + (index * 44), y: 0 , width: 45, height: 45 )
+            let button = UIButton(type: UIButtonType.system)
+            button.frame = frame1
+            button.setImage(#imageLiteral(resourceName: "black"), for: .normal)
+            button.tintColor = hexStringToUIColor(hex: colors[index-1])
             button.tag = index
-            
+            button.addTarget(self, action:#selector(self.colorPressed(sender:)), for: .touchUpInside)
+            scrollView.addSubview(button)
             toolItems.append(button)
-        }
+         }
         
-        toolItems[chosenButtonIndex].image = #imageLiteral(resourceName: "black-big")
-        navigationController?.toolbar.setItems(toolItems, animated: false)
+        scrollView.contentSize.width = CGFloat(44*toolItems.count)
+        toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
+        
     }
 
-    @IBAction func colorPressed(sender: UIBarButtonItem) {
+    @IBAction func colorPressed(sender: UIButton) {
         var id = 0
-        if sender.tag >= 0 || sender.tag <= 7 {
+        if sender.tag >= 0 || sender.tag <= 8 {
             id = sender.tag
         }
         if chosenButtonIndex != 0 {
-            toolItems[chosenButtonIndex].image = #imageLiteral(resourceName: "black")
+            toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
         }else{
-            toolItems[chosenButtonIndex].image = #imageLiteral(resourceName: "erase")
+            toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase"), for: .normal)
         }
-        sender.image = #imageLiteral(resourceName: "black-big")
-        chosenButtonIndex = sender.tag+1
-        drawView.drawColor = self.hexStringToUIColor(hex: colors[id])
+        sender.setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
+        chosenButtonIndex = sender.tag
+        drawView.drawColor = self.hexStringToUIColor(hex: colors[id-1])
         drawView.drawWidth = 8.0
         
     }
 
-    @IBAction func erase(sender: UIBarButtonItem) {
+    @IBAction func erase(sender: UIButton) {
         if chosenButtonIndex != 0 {
-            toolItems[chosenButtonIndex].image = #imageLiteral(resourceName: "black")
+            toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
         }
         
         chosenButtonIndex = 0
-        toolItems[chosenButtonIndex].image = #imageLiteral(resourceName: "erase-big")
+        toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase-big"), for: .normal)
         drawView.drawColor = UIColor.white
         drawView.drawWidth = 20.0
     }
@@ -151,26 +170,6 @@ class DrawViewController: UIViewController {
             }
         }
         return nil
-    }
-    
-    func createBarButtonItem(title: String?, image : UIImage?, style : UIBarButtonItemStyle?, target : AnyObject?, selector : Selector?) -> UIBarButtonItem{
-        let button = UIBarButtonItem()
-        if let theTitle = title {
-            button.title = theTitle
-        }
-        if let theImage = image {
-            button.image = theImage
-        }
-        if let theStyle = style{
-            button.style = theStyle
-        }
-        if let theTarget = target {
-            button.target = theTarget
-        }
-        if let theSelector = selector {
-            button.action = theSelector
-        }
-        return button
     }
 }
 
