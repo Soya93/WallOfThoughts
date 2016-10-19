@@ -1,5 +1,6 @@
 import UIKit
 
+//A view which you can draw on with your finger
 class DrawableView : UIView {
     
     var drawColor: UIColor = UIColor.black
@@ -48,7 +49,7 @@ class DrawableView : UIView {
     // MARK: Gestures
     
     private func setupGestureRecognizers() {
-        // 1. Set up a pan gesture recognizer to track where user moves finger
+        // Set up a pan gesture recognizer to track where user moves finger
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan(sender: )))
         self.addGestureRecognizer(panRecognizer)
     }
@@ -77,13 +78,13 @@ class DrawableView : UIView {
     
     private func continueAtPoint(point: CGPoint) {
         autoreleasepool {
-            // 2. Draw the current stroke in an accumulated bitmap
+            // Draw the current stroke in an accumulated bitmap
             self.buffer = self.drawLine(a: self.lastPoint, b: point, buffer: self.buffer)
             
-            // 3. Replace the layer contents with the updated image
+            // Replace the layer contents with the updated image
             self.layer.contents = self.buffer?.cgImage ?? nil
             
-            // 4. Update last point for next stroke
+            // Update last point for next stroke
             self.lastPoint = point
         }
     }

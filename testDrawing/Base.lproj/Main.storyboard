@@ -22,7 +22,7 @@
                     <navigationItem key="navigationItem" title="New thought" id="P1j-F7-La2">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u4x-A5-2HZ">
                             <connections>
-                                <segue destination="D3y-zN-uxl" kind="unwind" unwindAction="unwindToWallViewControllerWithSender:" id="nxI-XA-aPp"/>
+                                <segue destination="D3y-zN-uxl" kind="unwind" unwindAction="unwindToWorldViewControllerWithSender:" id="ehL-Oz-NcT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="5JH-ez-Lqh">
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="4759.1999999999998" y="250.52473763118442"/>
         </scene>
-        <!--Wall View Controller-->
+        <!--World View Controller-->
         <scene sceneID="0dg-ro-yjm">
             <objects>
-                <viewController id="5Ln-I0-sEV" customClass="WallViewController" customModule="testDrawing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Ln-I0-sEV" customClass="WorldViewController" customModule="testDrawing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tff-9A-28e"/>
                         <viewControllerLayoutGuide type="bottom" id="nGu-kD-jVC"/>

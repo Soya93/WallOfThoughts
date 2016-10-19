@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1858F0811DAE88DB00AC2986 /* PanoramaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858F0801DAE88DB00AC2986 /* PanoramaView.m */; };
-		1858F0871DAE892D00AC2986 /* park_2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0821DAE892D00AC2986 /* park_2048.png */; };
-		1858F0881DAE892D00AC2986 /* equirectangular-projection-lines.png in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0831DAE892D00AC2986 /* equirectangular-projection-lines.png */; };
 		1858F0AA1DAE896700AC2986 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0A91DAE896700AC2986 /* OpenGLES.framework */; };
 		1858F0AC1DAE896C00AC2986 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0AB1DAE896C00AC2986 /* GLKit.framework */; };
 		1858F0AE1DAE897200AC2986 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0AD1DAE897200AC2986 /* CoreMotion.framework */; };
 		1858F0B01DAE897700AC2986 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0AF1DAE897700AC2986 /* Foundation.framework */; };
 		1858F0B21DAE897C00AC2986 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0B11DAE897C00AC2986 /* CoreGraphics.framework */; };
 		1858F0B41DAE898100AC2986 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0B31DAE898100AC2986 /* UIKit.framework */; };
-		1858F0B61DAE8DD000AC2986 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1858F0B51DAE8DD000AC2986 /* InfoPlist.strings */; };
 		A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */; };
 		A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */; };
 		A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C361D9BAC2A00546A2B /* Main.storyboard */; };
@@ -24,9 +21,13 @@
 		A30F4C3D1D9BAC2A00546A2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */; };
 		A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C711D9BC63F00546A2B /* DrawableView.swift */; };
 		A35478B41DA3C48300C350FC /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B31DA3C48200C350FC /* DraggableView.swift */; };
-		A35478B61DA404B100C350FC /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B51DA404B100C350FC /* WallViewController.swift */; };
+		A35478B61DA404B100C350FC /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B51DA404B100C350FC /* WorldViewController.swift */; };
 		A3A610E11DB0F61800001691 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610E01DB0F61800001691 /* Image.swift */; };
-		A3A610E51DB7539D00001691 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610E41DB7539D00001691 /* Reachability.swift */; };
+		A3A610E51DB7539D00001691 /* ReachabilityUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610E41DB7539D00001691 /* ReachabilityUtils.swift */; };
+		A3A610EB1DB79B5800001691 /* DatabaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610EA1DB79B5800001691 /* DatabaseUtils.swift */; };
+		A3A610ED1DB7A02500001691 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610EC1DB7A02500001691 /* ImageController.swift */; };
+		A3AF8A351DB7AFEB00C1887D /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF8A341DB7AFEB00C1887D /* ImageUtils.swift */; };
+		A3AF8A371DB7B13B00C1887D /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF8A361DB7B13B00C1887D /* ColorUtils.swift */; };
 		A3CA8B5F1DA6B94E00BB1BE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */; };
 		A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */; };
 		DD5F13E8030A4C1ED79F3652 /* Pods_testDrawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */; };
@@ -36,16 +37,13 @@
 		1858F07E1DAE88DA00AC2986 /* testDrawing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testDrawing-Bridging-Header.h"; sourceTree = "<group>"; };
 		1858F07F1DAE88DB00AC2986 /* PanoramaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanoramaView.h; sourceTree = "<group>"; };
 		1858F0801DAE88DB00AC2986 /* PanoramaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanoramaView.m; sourceTree = "<group>"; };
-		1858F0821DAE892D00AC2986 /* park_2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = park_2048.png; path = /Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/images/park_2048.png; sourceTree = "<absolute>"; };
-		1858F0831DAE892D00AC2986 /* equirectangular-projection-lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "equirectangular-projection-lines.png"; path = "/Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/images/equirectangular-projection-lines.png"; sourceTree = "<absolute>"; };
-		1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Panorama-Prefix.pch"; path = "testDrawing/Panorama-Prefix.pch"; sourceTree = "<group>"; };
+		1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Panorama-Prefix.pch"; path = "testDrawing/Panorama-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		1858F0A91DAE896700AC2986 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		1858F0AB1DAE896C00AC2986 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		1858F0AD1DAE897200AC2986 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		1858F0AF1DAE897700AC2986 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1858F0B11DAE897C00AC2986 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1858F0B31DAE898100AC2986 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		1858F0B51DAE8DD000AC2986 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testDrawing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D061AE61DE392DD32DAECD /* Pods-testDrawing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDrawing.release.xcconfig"; path = "Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing.release.xcconfig"; sourceTree = "<group>"; };
 		90CFE577D693E2DFF26A823B /* Pods-testDrawing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDrawing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,9 +56,13 @@
 		A30F4C3E1D9BAC2B00546A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30F4C711D9BC63F00546A2B /* DrawableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
 		A35478B31DA3C48200C350FC /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		A35478B51DA404B100C350FC /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
+		A35478B51DA404B100C350FC /* WorldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
 		A3A610E01DB0F61800001691 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		A3A610E41DB7539D00001691 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A3A610E41DB7539D00001691 /* ReachabilityUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityUtils.swift; sourceTree = "<group>"; };
+		A3A610EA1DB79B5800001691 /* DatabaseUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseUtils.swift; sourceTree = "<group>"; };
+		A3A610EC1DB7A02500001691 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		A3AF8A341DB7AFEB00C1887D /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
+		A3AF8A361DB7B13B00C1887D /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,33 +85,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1858F0861DAE892D00AC2986 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				1858F0821DAE892D00AC2986 /* park_2048.png */,
-				1858F0831DAE892D00AC2986 /* equirectangular-projection-lines.png */,
-			);
-			name = images;
-			path = "../../../../Downloads/Panorama-master 2/Panorama";
-			sourceTree = "<group>";
-		};
-		1858F0941DAE894300AC2986 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = icons;
-			sourceTree = "<group>";
-		};
-		1858F09B1DAE894300AC2986 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1858F0941DAE894300AC2986 /* icons */,
-				1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			path = "../../../../Downloads/Panorama-master 2/Panorama";
-			sourceTree = "<group>";
-		};
 		A30F4C261D9BAC2900546A2B = {
 			isa = PBXGroup;
 			children = (
@@ -131,27 +106,61 @@
 		A30F4C311D9BAC2A00546A2B /* testDrawing */ = {
 			isa = PBXGroup;
 			children = (
+				A3A610E91DB79B3700001691 /* Utils */,
 				A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */,
-				A30F4C711D9BC63F00546A2B /* DrawableView.swift */,
-				A35478B31DA3C48200C350FC /* DraggableView.swift */,
-				A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */,
-				A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */,
-				A35478B51DA404B100C350FC /* WallViewController.swift */,
-				A3A610E41DB7539D00001691 /* Reachability.swift */,
-				A3A610E01DB0F61800001691 /* Image.swift */,
 				A30F4C361D9BAC2A00546A2B /* Main.storyboard */,
-				1858F07F1DAE88DB00AC2986 /* PanoramaView.h */,
-				1858F0801DAE88DB00AC2986 /* PanoramaView.m */,
-				A30F4C391D9BAC2A00546A2B /* Assets.xcassets */,
 				A30F4C3B1D9BAC2A00546A2B /* LaunchScreen.storyboard */,
+				A30F4C391D9BAC2A00546A2B /* Assets.xcassets */,
+				A3A610E61DB7948100001691 /* Model Files */,
+				A3A610E71DB794B000001691 /* Controllers */,
+				A3A610E81DB794C300001691 /* PanoramaView */,
 				A30F4C3E1D9BAC2B00546A2B /* Info.plist */,
 				A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */,
-				1858F09B1DAE894300AC2986 /* Supporting Files */,
 				1858F07E1DAE88DA00AC2986 /* testDrawing-Bridging-Header.h */,
-				1858F0B51DAE8DD000AC2986 /* InfoPlist.strings */,
-				1858F0861DAE892D00AC2986 /* images */,
 			);
 			path = testDrawing;
+			sourceTree = "<group>";
+		};
+		A3A610E61DB7948100001691 /* Model Files */ = {
+			isa = PBXGroup;
+			children = (
+				A30F4C711D9BC63F00546A2B /* DrawableView.swift */,
+				A35478B31DA3C48200C350FC /* DraggableView.swift */,
+				A3A610E01DB0F61800001691 /* Image.swift */,
+			);
+			name = "Model Files";
+			sourceTree = "<group>";
+		};
+		A3A610E71DB794B000001691 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */,
+				A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */,
+				A35478B51DA404B100C350FC /* WorldViewController.swift */,
+				A3A610EC1DB7A02500001691 /* ImageController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A3A610E81DB794C300001691 /* PanoramaView */ = {
+			isa = PBXGroup;
+			children = (
+				1858F07F1DAE88DB00AC2986 /* PanoramaView.h */,
+				1858F0801DAE88DB00AC2986 /* PanoramaView.m */,
+				1858F0991DAE894300AC2986 /* Panorama-Prefix.pch */,
+			);
+			name = PanoramaView;
+			sourceTree = "<group>";
+		};
+		A3A610E91DB79B3700001691 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A3A610E41DB7539D00001691 /* ReachabilityUtils.swift */,
+				A3A610EA1DB79B5800001691 /* DatabaseUtils.swift */,
+				A3AF8A341DB7AFEB00C1887D /* ImageUtils.swift */,
+				A3AF8A361DB7B13B00C1887D /* ColorUtils.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		D2F1271EC95FBBA28974E658 /* Pods */ = {
@@ -212,7 +221,7 @@
 				TargetAttributes = {
 					A30F4C2E1D9BAC2900546A2B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = R584P9J2XH;
+						DevelopmentTeam = AD9PDVLN6F;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -242,12 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30F4C3D1D9BAC2A00546A2B /* LaunchScreen.storyboard in Resources */,
-				1858F0871DAE892D00AC2986 /* park_2048.png in Resources */,
-				1858F0B61DAE8DD000AC2986 /* InfoPlist.strings in Resources */,
 				A3CA8B5F1DA6B94E00BB1BE3 /* GoogleService-Info.plist in Resources */,
 				A30F4C3A1D9BAC2A00546A2B /* Assets.xcassets in Resources */,
 				A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */,
-				1858F0881DAE892D00AC2986 /* equirectangular-projection-lines.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,15 +312,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A35478B61DA404B100C350FC /* WallViewController.swift in Sources */,
+				A3AF8A371DB7B13B00C1887D /* ColorUtils.swift in Sources */,
+				A35478B61DA404B100C350FC /* WorldViewController.swift in Sources */,
 				A3A610E11DB0F61800001691 /* Image.swift in Sources */,
 				1858F0811DAE88DB00AC2986 /* PanoramaView.m in Sources */,
 				A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */,
 				A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */,
-				A3A610E51DB7539D00001691 /* Reachability.swift in Sources */,
+				A3A610E51DB7539D00001691 /* ReachabilityUtils.swift in Sources */,
+				A3A610ED1DB7A02500001691 /* ImageController.swift in Sources */,
+				A3A610EB1DB79B5800001691 /* DatabaseUtils.swift in Sources */,
 				A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */,
 				A35478B41DA3C48300C350FC /* DraggableView.swift in Sources */,
 				A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */,
+				A3AF8A351DB7AFEB00C1887D /* ImageUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,10 +447,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R584P9J2XH;
+				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthoughts;
+				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthought;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "testDrawing/testDrawing-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -455,10 +465,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R584P9J2XH;
+				DEVELOPMENT_TEAM = AD9PDVLN6F;
 				INFOPLIST_FILE = testDrawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthoughts;
+				PRODUCT_BUNDLE_IDENTIFIER = se.chalmers.ait.wallofthought;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "testDrawing/testDrawing-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

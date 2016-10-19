@@ -10,21 +10,22 @@ import GLKit
 import UIKit
 import FirebaseDatabase
 
+
+//View controller for placing the newdrawn thought in the world
 class PlaceViewController: GLKViewController {
     
     @IBOutlet weak var imageContainer: UIImageView!
-    
     var image: UIImage?
     var panoramaView = PanoramaView.shared()
     
     override func viewDidLoad() {
         
-        //Thought image
+        //Add the image from previous viewcontroller to the imagecontainer with the right size, borders and transparancy.
         if let image = image {
             imageContainer.frame = CGRect(x: (UIScreen.main.bounds.width/2-image.size.width/8), y: (UIScreen.main.bounds.height/2-image.size.height/8), width: image.size.width/4, height: image.size.height/4)
             imageContainer.image = image
         }
-        let borderLayer  = dashedBorderLayerWithColor(color: UIColor.black.cgColor)
+        let borderLayer  = ImageUtils.dashedBorderLayerWithColor(imageView: imageContainer, color: UIColor.black.cgColor)
         imageContainer.layer.addSublayer(borderLayer)
         imageContainer.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         
@@ -34,37 +35,22 @@ class PlaceViewController: GLKViewController {
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
         panoramaView?.draw()
+        
+        //Add the imagecontainer to the top of all subviews
+        self.view.bringSubview(toFront: imageContainer)
     }
     
-    func dashedBorderLayerWithColor(color:CGColor) -> CAShapeLayer {
-        
-        let  borderLayer = CAShapeLayer()
-        borderLayer.name  = "borderLayer"
-        let frameSize = imageContainer.frame.size
-        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
-        
-        borderLayer.bounds=shapeRect
-        borderLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
-        borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = color
-        borderLayer.lineWidth=1
-        borderLayer.lineJoin=kCALineJoinRound
-        borderLayer.lineDashPattern = NSArray(array: [NSNumber(value: 8),NSNumber(value:4)]) as? [NSNumber]
-        
-        let path = UIBezierPath.init(roundedRect: shapeRect, cornerRadius: 0)
-        
-        borderLayer.path = path.cgPath
-        
-        return borderLayer
-        
-    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
-        if Reachability.isConnectedToNetwork() != true {
+        
+        //If there's no network connection, alert the user. Otherwise upload the image to the database.
+        if ReachabilityUtils.isConnectedToNetwork() != true {
             
             let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
@@ -75,31 +61,7 @@ class PlaceViewController: GLKViewController {
             imageContainer.removeFromSuperview()
             self.view = GLKView()
             
-            //Upload image
-            var ref: FIRDatabaseReference!
-            ref = FIRDatabase.database().reference()
-            
-            let x = imageContainer.center.x - imageContainer.frame.size.width/2
-            let y = imageContainer.center.y - imageContainer.frame.size.height/2
-            let vector = panoramaView?.vector(fromScreenLocation: CGPoint(x: x, y: y))
-            let location = panoramaView?.screenLocation(from: vector!)
-            let imagepixel = panoramaView?.imagePixel(atScreenLocation: location!)
-
-            let xPos : String = String(describing: vector!.v.0)
-            let yPos : String = String(describing: vector!.v.1)
-            let zPos : String = String(describing: vector!.v.2)
-            let xPixel: String = String(describing: imagepixel!.x.rounded())
-            let yPixel: String = String(describing: imagepixel!.y.rounded())
-            let uploadImage: String = (UIImagePNGRepresentation(image!)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters))!
-            
-            print("xpos", xPos)
-            print("xpixel is ", xPixel)
-            print("ypixel is ", yPixel)
-            
-            let imageInfo = ["x": xPos, "y": yPos, "z": zPos, "xpixel": xPixel, "ypixel": yPixel, "image": uploadImage]
-            
-            let key = ref.child("images").childByAutoId()
-            key.setValue(imageInfo)
+            DatabaseUtils.uploadImage(imageContainer: imageContainer)
             
             performSegue(withIdentifier: "showWall", sender: sender)
         }
@@ -109,9 +71,13 @@ class PlaceViewController: GLKViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier != "showWall" {
+            //Prepare panoramaview to be used by other viewcontroller
             imageContainer.removeFromSuperview()
             self.view = GLKView()
   
         }
-    }  
+    }
+    
+    
+  
 }

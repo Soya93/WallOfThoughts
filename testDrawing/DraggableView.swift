@@ -8,6 +8,7 @@
 
 import UIKit
 
+//A view which follows the users finger on the screen
 class DraggableView: UIImageView {
 
     
@@ -19,7 +20,7 @@ class DraggableView: UIImageView {
     }
     
     private func setupGestureRecognizers() {
-        // 1. Set up a pan gesture recognizer to track where user moves finger
+        // Set up a pan gesture recognizer to track where user moves finger
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer: )))
         self.addGestureRecognizer(panRecognizer)
     }
@@ -38,13 +39,5 @@ class DraggableView: UIImageView {
         lastLocation = self.center
     }
     
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
 
 }

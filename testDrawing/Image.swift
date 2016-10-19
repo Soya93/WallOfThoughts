@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+// A class representing an image. Each image has a vector for position, a pixelPoint and an imageView containing the image.
 @objc class Image : NSObject {
     var pos: GLKVector3 = GLKVector3Make(0.0,0.0,0.0)
     var imageView: UIImageView = UIImageView()
@@ -32,17 +34,4 @@ import Foundation
         return pixelPoint
     }
     
-    @objc func render()  {
-        let imageLocation = panoramaView?.screenLocation(from: pos)
-        let imagePixel = panoramaView?.imagePixel(atScreenLocation: imageLocation!)
-        
-        if (imagePixel?.x.rounded())! < pixelPoint.x + 2 && (imagePixel?.x.rounded())! > pixelPoint.x - 2 {
-            imageView.frame = CGRect(x: (imageLocation?.x)!, y: (imageLocation?.y)!, width: (imageView.image?.size.width)!/4,
-                                     height: (imageView.image?.size.height)!/4)
-            panoramaView?.addSubview(imageView)
-           // print("In renderer if");
-        } else {
-            //print("In renderer else");
-        }
-    }
 }

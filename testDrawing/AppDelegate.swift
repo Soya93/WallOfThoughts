@@ -16,14 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        
+        //Set tintcolor for navigationbar
         UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: (90/255), green: (200/255), blue: (250/255), alpha: 1)
+        
+        //Set up database
         FIRApp.configure()
+        
+        //Set up panoramaView
         let panoramaView = PanoramaView.shared()
-        panoramaView?.setImage(UIImage(named: "park_2048.png"))
-        panoramaView?.touchToPan = false          // Use touch input to pan
+        panoramaView?.setImage(#imageLiteral(resourceName: "BackgroundImage"))
         panoramaView?.orientToDevice = true     // Use motion sensors to pan
-        panoramaView?.pinchToZoom = false         // Use pinch gesture to zoom
-        panoramaView?.showTouches = true         // Show touches
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -51,7 +51,7 @@ GLKQuaternion GLKQuaternionFromTwoVectors(GLKVector3 u, GLKVector3 v){
     float _aspectRatio;
     GLfloat circlePoints[64*3];  // meridian lines
     CGPoint buttonLocation;
-    NSMutableArray<Image *> *images;
+    ImageController *imageController;
 }
 @end
 
@@ -164,7 +164,8 @@ static PanoramaView *sharedPanoramaView = nil;
     [self customGL];
     [self makeLatitudeLines];
     
-    images = [NSMutableArray new];
+    imageController = [ImageController sharedInstance];
+    
 }
 -(void)rebuildProjectionMatrix{
     glMatrixMode(GL_PROJECTION);
@@ -285,17 +286,9 @@ static PanoramaView *sharedPanoramaView = nil;
     _lookAzimuth = atan2f(_lookVector.x, -_lookVector.z);
     _lookAltitude = asinf(_lookVector.y);
     
-    for (Image* image in images) {
-        int indexValue = [images indexOfObject:image];
-        printf("%s", " || Image is: ");
-        printf("%d", indexValue);
-        
-        [image render];
+    for (Image* image in [imageController getImages]) {
+        [imageController renderImageWithImage:image];
     }
-}
-
--(void) addImage:(Image*)image {
-    [images addObject:image];
 }
 
 -(CGPoint) imagePixelAtScreenLocation:(CGPoint)point{

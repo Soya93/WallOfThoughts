@@ -60,7 +60,7 @@ class DrawViewController: UIViewController {
         let eraseButton = UIButton(type: UIButtonType.system)
         eraseButton.frame = frame1
         eraseButton.setImage(#imageLiteral(resourceName: "erase"), for: .normal)
-        eraseButton.tintColor = hexStringToUIColor(hex: colors[2])
+        eraseButton.tintColor = ColorUtils.hexStringToUIColor(hex: colors[2])
         eraseButton.addTarget(self, action:#selector(self.erase(sender:)), for: .touchUpInside)
 
         
@@ -72,7 +72,7 @@ class DrawViewController: UIViewController {
             let button = UIButton(type: UIButtonType.system)
             button.frame = frame1
             button.setImage(#imageLiteral(resourceName: "black"), for: .normal)
-            button.tintColor = hexStringToUIColor(hex: colors[index-1])
+            button.tintColor = ColorUtils.hexStringToUIColor(hex: colors[index-1])
             button.tag = index
             button.addTarget(self, action:#selector(self.colorPressed(sender:)), for: .touchUpInside)
             scrollView.addSubview(button)
@@ -96,7 +96,7 @@ class DrawViewController: UIViewController {
         }
         sender.setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
         chosenButtonIndex = sender.tag
-        drawView.drawColor = self.hexStringToUIColor(hex: colors[id-1])
+        drawView.drawColor = ColorUtils.hexStringToUIColor(hex: colors[id-1])
         drawView.drawWidth = 8.0
         
     }
@@ -111,11 +111,7 @@ class DrawViewController: UIViewController {
         drawView.drawColor = UIColor.white
         drawView.drawWidth = 20.0
     }
-    
-    @IBAction func cancel(sender: AnyObject) {
-        /*UIBarButtonItem) {
-            dismissViewControllerAnimated(true, completion: nil)*/
-    }
+
     
     func saveThought(){
         UIGraphicsBeginImageContextWithOptions(drawView.bounds.size, drawView.isOpaque, 0.0)
@@ -123,7 +119,7 @@ class DrawViewController: UIViewController {
         let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.image = snapshotImageFromMyView
-        self.image = imageByMakingWhiteBackgroundTransparent()
+        self.image = ImageUtils.imageByMakingWhiteBackgroundTransparent(image: image!)
     }
    
     @IBAction func done(_ sender: UIBarButtonItem) {
@@ -143,36 +139,5 @@ class DrawViewController: UIViewController {
         //Do nothing
     }
     
-    
-    func hexStringToUIColor (hex:String) -> UIColor {
-        if ((hex.characters.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: hex).scanHexInt32(&rgbValue)
-                return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-    
-    func imageByMakingWhiteBackgroundTransparent() -> UIImage? {
-        if let rawImageRef = self.image {
-            let colorMasking: [CGFloat] = [200, 255, 200, 255, 200, 255]
-            UIGraphicsBeginImageContext((image?.size)!)
-            if let maskedImageRef = image?.cgImage?.copy(maskingColorComponents: colorMasking) {
-                UIGraphicsGetCurrentContext()!.translateBy(x: 0.0, y: rawImageRef.size.height)
-                UIGraphicsGetCurrentContext()!.scaleBy(x: 1.0, y: -1.0)
-                UIGraphicsGetCurrentContext()?.draw(maskedImageRef, in: CGRect(x: 0, y: 0, width: rawImageRef.size.width, height: rawImageRef.size.height))
-                let result = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
-                return result
-            }
-        }
-        return nil
-    }
 }
 
