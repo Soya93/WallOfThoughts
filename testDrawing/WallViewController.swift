@@ -53,6 +53,14 @@ class WallViewController: GLKViewController {
        self.view = panoramaView
        self.view.layer.addSublayer(previewLayer)
         
+        if Reachability.isConnectedToNetwork() != true {
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
         addImages()
         button = UIButton(frame: CGRect(x: (Int(self.view.frame.width/2) - (#imageLiteral(resourceName: "Thought").cgImage?.width)!/2), y: (Int(self.view.frame.height) - (#imageLiteral(resourceName: "Thought").cgImage?.height)!), width: (#imageLiteral(resourceName: "Thought").cgImage?.width)!, height: (#imageLiteral(resourceName: "Thought").cgImage?.height)!))
         button.setImage(#imageLiteral(resourceName: "Thought"), for: .normal)
@@ -65,6 +73,8 @@ class WallViewController: GLKViewController {
         button.layer.cornerRadius = 4.0
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+        
+        
     }
     
     func buttonAction(sender: UIButton!) {

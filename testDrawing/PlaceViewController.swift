@@ -18,7 +18,6 @@ class PlaceViewController: GLKViewController {
     var panoramaView = PanoramaView.shared()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
         //Thought image
         if let image = image {
@@ -64,11 +63,18 @@ class PlaceViewController: GLKViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        imageContainer.removeFromSuperview()
-        self.view = GLKView()
-        
-        if segue.identifier == "showWall" {
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        if Reachability.isConnectedToNetwork() != true {
+            
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            imageContainer.removeFromSuperview()
+            self.view = GLKView()
+            
             //Upload image
             var ref: FIRDatabaseReference!
             ref = FIRDatabase.database().reference()
@@ -86,6 +92,18 @@ class PlaceViewController: GLKViewController {
             
             let key = ref.child("images").childByAutoId()
             key.setValue(imageInfo)
+            
+            performSegue(withIdentifier: "showWall", sender: sender)
+        }
+
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier != "showWall" {
+            imageContainer.removeFromSuperview()
+            self.view = GLKView()
+  
         }
     }  
 }

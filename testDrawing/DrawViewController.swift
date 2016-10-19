@@ -30,7 +30,6 @@ class DrawViewController: UIViewController {
         drawView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height-44)
         self.view.addSubview(drawView)
         setUpToolBar()
-        //self.navigationController?.isToolbarHidden = false
     }
     
     
@@ -127,13 +126,17 @@ class DrawViewController: UIViewController {
         self.image = imageByMakingWhiteBackgroundTransparent()
     }
    
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "finishedDrawing", sender: sender)
+    }
 
  // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "finishedDrawing" {
                 let controller = (segue.destination as! UINavigationController).topViewController as! PlaceViewController
                 saveThought()
-                controller.image = image        }
+                controller.image = image
+        }
     }
     
     @IBAction func unwindToDrawViewController(sender: UIStoryboardSegue) {

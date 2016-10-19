@@ -26,6 +26,7 @@
 		A35478B41DA3C48300C350FC /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B31DA3C48200C350FC /* DraggableView.swift */; };
 		A35478B61DA404B100C350FC /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35478B51DA404B100C350FC /* WallViewController.swift */; };
 		A3A610E11DB0F61800001691 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610E01DB0F61800001691 /* Image.swift */; };
+		A3A610E51DB7539D00001691 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A610E41DB7539D00001691 /* Reachability.swift */; };
 		A3CA8B5F1DA6B94E00BB1BE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */; };
 		A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */; };
 		DD5F13E8030A4C1ED79F3652 /* Pods_testDrawing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */; };
@@ -59,6 +60,7 @@
 		A35478B31DA3C48200C350FC /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		A35478B51DA404B100C350FC /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
 		A3A610E01DB0F61800001691 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		A3A610E41DB7539D00001691 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A3CA8B5D1DA6B68A00BB1BE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */,
 				A3FD6A511D9EAAF3004506EB /* PlaceViewController.swift */,
 				A35478B51DA404B100C350FC /* WallViewController.swift */,
+				A3A610E41DB7539D00001691 /* Reachability.swift */,
 				A3A610E01DB0F61800001691 /* Image.swift */,
 				A30F4C361D9BAC2A00546A2B /* Main.storyboard */,
 				1858F07F1DAE88DB00AC2986 /* PanoramaView.h */,
@@ -308,6 +311,7 @@
 				1858F0811DAE88DB00AC2986 /* PanoramaView.m in Sources */,
 				A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */,
 				A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */,
+				A3A610E51DB7539D00001691 /* Reachability.swift in Sources */,
 				A3FD6A521D9EAAF3004506EB /* PlaceViewController.swift in Sources */,
 				A35478B41DA3C48300C350FC /* DraggableView.swift in Sources */,
 				A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */,
