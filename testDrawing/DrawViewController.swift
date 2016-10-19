@@ -8,13 +8,15 @@
 
 import UIKit 
 
+//View controller for drawing thoughts
 class DrawViewController: UIViewController {
     
     var image: UIImage?
     var drawView: DrawableView = DrawableView()
-    @IBOutlet weak var doneButton: UIBarButtonItem!
     var toolItems: [UIButton] = []
     var chosenButtonIndex : Int = 1
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+
     
     let colors: [String] = ["000000",
                            "4CD964",
@@ -28,12 +30,13 @@ class DrawViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         drawView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height-44)
-        self.view.addSubview(drawView)
-        setUpToolBar()
-        doneButton.isEnabled = drawView.hasDrawn;
         drawView.addObserver(self, forKeyPath: "hasDrawn", options: .new, context: nil)
+        self.view.addSubview(drawView)
+        doneButton.isEnabled = drawView.hasDrawn;
+        setUpToolBar()
     }
     
+    //An observer handling the enabling and disabling of button for coming to the next view
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "hasDrawn" {
             doneButton.isEnabled = drawView.hasDrawn;
@@ -52,9 +55,10 @@ class DrawViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
+    //Setting up the scrollable toolbar where the colors and the eraser are located
     func setUpToolBar(){
-        
         let toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-44), width: self.view.frame.width, height: 44))
         let scrollView = UIScrollView()
         scrollView.frame.size.width = toolbarView.frame.width
@@ -90,14 +94,16 @@ class DrawViewController: UIViewController {
         
         scrollView.contentSize.width = CGFloat(44*toolItems.count)
         toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
-        
     }
 
+    //Method which handles when color in the toolbar has been pressed.
     @IBAction func colorPressed(sender: UIButton) {
         var id = 0
         if sender.tag >= 0 || sender.tag <= 8 {
             id = sender.tag
         }
+        
+        //Changes the image of the previous and the current chosen color.
         if chosenButtonIndex != 0 {
             toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
         }else{
@@ -105,23 +111,28 @@ class DrawViewController: UIViewController {
         }
         sender.setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
         chosenButtonIndex = sender.tag
+        
+        //Update color and width for drawing
         drawView.drawColor = ColorUtils.hexStringToUIColor(hex: colors[id-1])
         drawView.drawWidth = 8.0
-        
     }
 
+    //Method which handles actions involving the eraser of the toolbar.
     @IBAction func erase(sender: UIButton) {
+        
+        //Changes the image of the previous and the current chosen eraser.
         if chosenButtonIndex != 0 {
             toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
         }
-        
         chosenButtonIndex = 0
         toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase-big"), for: .normal)
+        
+        //Update color and width for drawing
         drawView.drawColor = UIColor.white
         drawView.drawWidth = 20.0
     }
 
-    
+    //Method which takes the canvas and makes returns in an image with a transparent background.
     func saveThought(){
         UIGraphicsBeginImageContextWithOptions(drawView.bounds.size, drawView.isOpaque, 0.0)
         drawView.drawHierarchy(in: drawView.bounds, afterScreenUpdates: false)
@@ -131,6 +142,8 @@ class DrawViewController: UIViewController {
         self.image = ImageUtils.imageByMakingWhiteBackgroundTransparent(image: image!)
     }
    
+    /*Method invoked when the "done"-button is pressed. The image is saved, and a segue is
+    peformed to perceed to the next view */
     @IBAction func done(_ sender: UIBarButtonItem) {
             saveThought()
             performSegue(withIdentifier: "finishedDrawing", sender: sender)

@@ -77,7 +77,5 @@ class PlaceViewController: GLKViewController {
   
         }
     }
-    
-    
   
 }
