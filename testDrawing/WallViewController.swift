@@ -15,6 +15,7 @@ class WallViewController: GLKViewController {
     var panoramaView = PanoramaView.shared()
     var button : UIButton = UIButton()
     var previewLayer = AVCaptureVideoPreviewLayer()
+
     
     override func viewDidLoad() {
         //capture video input in an AVCaptureLayerVideoPreviewLayer
@@ -115,14 +116,29 @@ class WallViewController: GLKViewController {
             let x : Float = Float(snapshot.childSnapshot(forPath: "x").value as! String)!
             let y : Float = Float(snapshot.childSnapshot(forPath: "y").value as! String)!
             let z : Float = Float(snapshot.childSnapshot(forPath: "z").value as! String)!
+            let xpixel: Float = Float(snapshot.childSnapshot(forPath: "xpixel").value as! String)!
+            let ypixel: Float = Float(snapshot.childSnapshot(forPath: "ypixel").value as! String)!
+        
+            //Exception handling for values of the image pixels
+            /*var xpixel: Float = -1.00;
+            if !(snapshot.childSnapshot(forPath: "xpixel").value is NSNull) {
+                xpixel = Float(snapshot.childSnapshot(forPath: "xpixel").value as! String)!
+            }*/
+                
+            /*var ypixel: Float = -1.00;
+            if !(snapshot.childSnapshot(forPath: "ypixel").value is NSNull) {
+                ypixel = Float(snapshot.childSnapshot(forPath: "ypixel").value as! String)!
+            }*/
+        
             let pos : GLKVector3 = GLKVector3Make(x, y, z)
             let image = snapshot.childSnapshot(forPath: "image").value
+            let pixelpoint = CGPoint(x: Int(xpixel), y: Int(ypixel))
         
             let base64EncodedString = image
             let imageData = NSData(base64Encoded: base64EncodedString as! String,
                                    options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
             let decodedImage = UIImage(data:imageData! as Data)
-            let finishedImage : Image = Image(pos: pos, imageView: UIImageView(image: decodedImage!))
+            let finishedImage : Image = Image(pos: pos, imageView: UIImageView(image: decodedImage!), pixelPoint: pixelpoint)
             self.panoramaView?.add(finishedImage)
         })
     }

@@ -27,7 +27,6 @@
 /// set image by path or bundle - will check at both
 -(void) setImageWithName:(NSString*)fileName;
 
-
 /* orientation */
 
 /// forward vector axis (into the screen)

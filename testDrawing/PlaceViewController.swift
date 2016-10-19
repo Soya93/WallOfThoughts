@@ -82,13 +82,21 @@ class PlaceViewController: GLKViewController {
             let x = imageContainer.center.x - imageContainer.frame.size.width/2
             let y = imageContainer.center.y - imageContainer.frame.size.height/2
             let vector = panoramaView?.vector(fromScreenLocation: CGPoint(x: x, y: y))
-            
+            let location = panoramaView?.screenLocation(from: vector!)
+            let imagepixel = panoramaView?.imagePixel(atScreenLocation: location!)
+
             let xPos : String = String(describing: vector!.v.0)
             let yPos : String = String(describing: vector!.v.1)
             let zPos : String = String(describing: vector!.v.2)
+            let xPixel: String = String(describing: imagepixel!.x.rounded())
+            let yPixel: String = String(describing: imagepixel!.y.rounded())
             let uploadImage: String = (UIImagePNGRepresentation(image!)?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters))!
             
-            let imageInfo = ["x": xPos, "y": yPos, "z": zPos, "image": uploadImage]
+            print("xpos", xPos)
+            print("xpixel is ", xPixel)
+            print("ypixel is ", yPixel)
+            
+            let imageInfo = ["x": xPos, "y": yPos, "z": zPos, "xpixel": xPixel, "ypixel": yPixel, "image": uploadImage]
             
             let key = ref.child("images").childByAutoId()
             key.setValue(imageInfo)

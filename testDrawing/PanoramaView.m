@@ -51,12 +51,12 @@ GLKQuaternion GLKQuaternionFromTwoVectors(GLKVector3 u, GLKVector3 v){
     float _aspectRatio;
     GLfloat circlePoints[64*3];  // meridian lines
     CGPoint buttonLocation;
-    UIButton *button;
     NSMutableArray<Image *> *images;
 }
 @end
 
 @implementation PanoramaView
+
 
 static PanoramaView *sharedPanoramaView = nil;
 
@@ -152,6 +152,7 @@ static PanoramaView *sharedPanoramaView = nil;
         [self rebuildProjectionMatrix];
     }
 }
+
 #pragma mark- OPENGL
 -(void)initOpenGL:(EAGLContext*)context{
     [(CAEAGLLayer*)self.layer setOpaque:NO];
@@ -285,17 +286,12 @@ static PanoramaView *sharedPanoramaView = nil;
     _lookAltitude = asinf(_lookVector.y);
     
     for (Image* image in images) {
-        GLKVector3 position = [image getPos];
-        CGPoint imageLocation = [self screenLocationFromVector:position];
+        int indexValue = [images indexOfObject:image];
+        printf("%s", " || Image is: ");
+        printf("%d", indexValue);
         
-        if (imageLocation.x == imageLocation.x){
-            [[image getImageView] setFrame:CGRectMake(imageLocation.x, imageLocation.y, [image getImageView].image.size.width/4, [image getImageView].image.size.height/4)];
-        }
-        [self addSubview:[image getImageView]];
-
+        [image render];
     }
-    
-    
 }
 
 -(void) addImage:(Image*)image {
