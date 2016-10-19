@@ -5,6 +5,7 @@ class DrawableView : UIView {
     
     var drawColor: UIColor = UIColor.black
     var drawWidth: CGFloat = 8.0
+    dynamic var hasDrawn: Bool = false
     
     private var lastPoint: CGPoint = CGPoint.zero
     private var buffer: UIImage?
@@ -87,6 +88,7 @@ class DrawableView : UIView {
             // Update last point for next stroke
             self.lastPoint = point
         }
+        hasDrawn = true
     }
     
     private func endAtPoint(point: CGPoint) {

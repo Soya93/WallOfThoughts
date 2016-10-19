@@ -54,17 +54,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testDrawing/PlaceViewController.swift"
-            timestampString = "498555760.276447"
+            timestampString = "498573367.827679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "PlaceViewController"
-            landmarkType = "3">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "done(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,12 +74,137 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testDrawing/PlaceViewController.swift"
-            timestampString = "498404114.991049"
+            timestampString = "498573367.827679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "done(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testDrawing/DrawViewController.swift"
+            timestampString = "498580495.495653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testDrawing/DrawViewController.swift"
+            timestampString = "498572539.780557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "DrawViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testDrawing.DrawViewController.__deallocating_deinit"
+                  moduleName = "testDrawing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/DrawViewController.swift"
+                  timestampString = "498572539.795871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testDrawing.DrawViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; testDrawing.DrawViewController"
+                  moduleName = "testDrawing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/DrawViewController.swift"
+                  timestampString = "498572539.797882"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testDrawing.DrawViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; testDrawing.DrawViewController"
+                  moduleName = "testDrawing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/DrawViewController.swift"
+                  timestampString = "498572539.799755"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testDrawing.DrawViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;testDrawing.DrawViewController&gt;"
+                  moduleName = "testDrawing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/DrawViewController.swift"
+                  timestampString = "498572539.801679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testDrawing.DrawViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;testDrawing.DrawViewController&gt;"
+                  moduleName = "testDrawing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/SoyaPanda/Documents/GitHub/WallOfThoughts/testDrawing/DrawViewController.swift"
+                  timestampString = "498572539.804413"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testDrawing/PanoramaView.m"
+            timestampString = "498573410.325737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "-updateLook"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

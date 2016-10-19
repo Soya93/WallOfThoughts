@@ -12,7 +12,7 @@ class DrawViewController: UIViewController {
     
     var image: UIImage?
     var drawView: DrawableView = DrawableView()
-    
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     var toolItems: [UIButton] = []
     var chosenButtonIndex : Int = 1
     
@@ -30,13 +30,22 @@ class DrawViewController: UIViewController {
         drawView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height-44)
         self.view.addSubview(drawView)
         setUpToolBar()
+        doneButton.isEnabled = drawView.hasDrawn;
+        drawView.addObserver(self, forKeyPath: "hasDrawn", options: .new, context: nil)
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "hasDrawn" {
+            doneButton.isEnabled = drawView.hasDrawn;
+        }
+    }
+    
+    deinit {
+        drawView.removeObserver(self, forKeyPath: "hasDrawn")
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         drawView.awakeFromNib()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,14 +132,14 @@ class DrawViewController: UIViewController {
     }
    
     @IBAction func done(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "finishedDrawing", sender: sender)
+            saveThought()
+            performSegue(withIdentifier: "finishedDrawing", sender: sender)
     }
 
  // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "finishedDrawing" {
                 let controller = (segue.destination as! UINavigationController).topViewController as! PlaceViewController
-                saveThought()
                 controller.image = image
         }
     }

@@ -32,6 +32,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="5JH-ez-Lqh" id="B05-xp-DTR"/>
                         <segue destination="Vca-gA-lxU" kind="show" identifier="finishedDrawing" action="showDetailViewController:sender:" id="Dea-Is-aZB"/>
                     </connections>
                 </viewController>
