@@ -16,16 +16,6 @@ class DrawViewController: UIViewController {
     var toolItems: [UIButton] = []
     var chosenButtonIndex : Int = 1
     @IBOutlet weak var doneButton: UIBarButtonItem!
-
-    
-    let colors: [String] = ["000000",
-                           "4CD964",
-                           "5AC8FA",
-                           "007AFF",
-                           "FF2D55",
-                           "FF3B30",
-                           "FF9500",
-                           "FFCC00"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +49,10 @@ class DrawViewController: UIViewController {
     
     //Setting up the scrollable toolbar where the colors and the eraser are located
     func setUpToolBar(){
-        let toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-44), width: self.view.frame.width, height: 44))
+        let toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-88), width: self.view.frame.width, height: 88))
+        toolbarView.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue:247.0/255.0, alpha:1.0)
+        toolbarView.layer.borderWidth = 1
+        toolbarView.layer.borderColor = ColorUtils.hexStringToUIColor(hex: "CECED2").cgColor
         let scrollView = UIScrollView()
         scrollView.frame.size.width = toolbarView.frame.width
         scrollView.frame.size.height = toolbarView.frame.height
@@ -69,30 +62,30 @@ class DrawViewController: UIViewController {
         
         toolItems = []
         chosenButtonIndex = 1
-        let frame1 = CGRect(x: 0, y: 0 , width: 45, height: 45 )
+        let frame1 = CGRect(x: 0, y: 0 , width: 89, height: 89 )
         let eraseButton = UIButton(type: UIButtonType.system)
         eraseButton.frame = frame1
         eraseButton.setImage(#imageLiteral(resourceName: "erase"), for: .normal)
-        eraseButton.tintColor = ColorUtils.hexStringToUIColor(hex: colors[2])
+        eraseButton.tintColor = ColorUtils.hexStringToUIColor(hex: ColorUtils.toolbarColors[8])
         eraseButton.addTarget(self, action:#selector(self.erase(sender:)), for: .touchUpInside)
 
         
         toolItems.append(eraseButton)
         scrollView.addSubview(eraseButton)
         
-         for index in 1...colors.count {
-            let frame1 = CGRect(x: 0 + (index * 44), y: 0 , width: 45, height: 45 )
+         for index in 1...ColorUtils.toolbarColors.count {
+            let frame1 = CGRect(x: 0 + (index * 66), y: 0 , width: 89, height: 89 )
             let button = UIButton(type: UIButtonType.system)
             button.frame = frame1
             button.setImage(#imageLiteral(resourceName: "black"), for: .normal)
-            button.tintColor = ColorUtils.hexStringToUIColor(hex: colors[index-1])
+            button.tintColor = ColorUtils.hexStringToUIColor(hex: ColorUtils.toolbarColors[index-1])
             button.tag = index
             button.addTarget(self, action:#selector(self.colorPressed(sender:)), for: .touchUpInside)
             scrollView.addSubview(button)
             toolItems.append(button)
          }
         
-        scrollView.contentSize.width = CGFloat(44*toolItems.count)
+        scrollView.contentSize.width = CGFloat(66*toolItems.count)
         toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
     }
 
@@ -113,7 +106,7 @@ class DrawViewController: UIViewController {
         chosenButtonIndex = sender.tag
         
         //Update color and width for drawing
-        drawView.drawColor = ColorUtils.hexStringToUIColor(hex: colors[id-1])
+        drawView.drawColor = ColorUtils.hexStringToUIColor(hex: ColorUtils.toolbarColors[id-1])
         drawView.drawWidth = 8.0
     }
 
@@ -129,7 +122,7 @@ class DrawViewController: UIViewController {
         
         //Update color and width for drawing
         drawView.drawColor = UIColor.white
-        drawView.drawWidth = 20.0
+        drawView.drawWidth = 30.0
     }
 
     //Method which takes the canvas and makes returns in an image with a transparent background.
@@ -160,6 +153,16 @@ class DrawViewController: UIViewController {
     @IBAction func unwindToDrawViewController(sender: UIStoryboardSegue) {
         //Do nothing
     }
-    
+
+    func addBorder(layer: CALayer, color: UIColor, thickness: CGFloat) -> CALayer {
+        
+        let border = layer
+        
+        border.frame = CGRect(x: 0, y: 0, width: layer.frame.width, height: thickness)
+
+        border.backgroundColor = color.cgColor;
+        
+        return border
+    }
 }
 

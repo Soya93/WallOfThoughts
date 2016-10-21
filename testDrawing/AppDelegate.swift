@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         
         //Set tintcolor for navigationbar
-        UINavigationBar.appearance().tintColor = UIColor(colorLiteralRed: (90/255), green: (200/255), blue: (250/255), alpha: 1)
+        UINavigationBar.appearance().tintColor = ColorUtils.hexStringToUIColor(hex: "FF2D55")
         
         //Set up database
         FIRApp.configure()
