@@ -73,7 +73,6 @@ class WorldViewController: GLKViewController {
         
         setupButton()
         
-        
     }
     
     //Action for button to add new thougt
