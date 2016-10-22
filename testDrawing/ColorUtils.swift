@@ -10,6 +10,19 @@ import Foundation
 
 class ColorUtils {
     
+    static let toolbarColors: [String] = ["000000", //black
+                                          "2F811C", //dark green
+                                          "4CD964", //green
+                                          "5AC8FA", //light blue
+                                          "007AFF", //blue
+                                          "7C328D", //dark purple
+                                          "CD6AE8", //purple
+                                          "D53BA0", //pink
+                                          "FF2D55", //redpink
+                                          "FF3B30", //red
+                                          "FF9500", //orange
+                                          "FFCC00"] //yellow
+    
     //Function for translating a hex string to a UIColor
     class func hexStringToUIColor (hex:String) -> UIColor {
         
