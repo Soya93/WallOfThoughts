@@ -14,6 +14,7 @@
 		1858F0B01DAE897700AC2986 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0AF1DAE897700AC2986 /* Foundation.framework */; };
 		1858F0B21DAE897C00AC2986 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0B11DAE897C00AC2986 /* CoreGraphics.framework */; };
 		1858F0B41DAE898100AC2986 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1858F0B31DAE898100AC2986 /* UIKit.framework */; };
+		189B4D3E1DBB92F7009DD768 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B4D3D1DBB92F7009DD768 /* ToolbarView.swift */; };
 		A30F4C331D9BAC2A00546A2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C321D9BAC2A00546A2B /* AppDelegate.swift */; };
 		A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F4C341D9BAC2A00546A2B /* DrawViewController.swift */; };
 		A30F4C381D9BAC2A00546A2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30F4C361D9BAC2A00546A2B /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		1858F0AF1DAE897700AC2986 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1858F0B11DAE897C00AC2986 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1858F0B31DAE898100AC2986 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		189B4D3D1DBB92F7009DD768 /* ToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		236D1A841743EB8DF6B1E050 /* Pods_testDrawing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testDrawing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D061AE61DE392DD32DAECD /* Pods-testDrawing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDrawing.release.xcconfig"; path = "Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing.release.xcconfig"; sourceTree = "<group>"; };
 		90CFE577D693E2DFF26A823B /* Pods-testDrawing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDrawing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testDrawing/Pods-testDrawing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				A30F4C711D9BC63F00546A2B /* DrawableView.swift */,
 				A35478B31DA3C48200C350FC /* DraggableView.swift */,
 				A3A610E01DB0F61800001691 /* Image.swift */,
+				189B4D3D1DBB92F7009DD768 /* ToolbarView.swift */,
 			);
 			name = "Model Files";
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				1858F0811DAE88DB00AC2986 /* PanoramaView.m in Sources */,
 				A30F4C721D9BC63F00546A2B /* DrawableView.swift in Sources */,
 				A30F4C351D9BAC2A00546A2B /* DrawViewController.swift in Sources */,
+				189B4D3E1DBB92F7009DD768 /* ToolbarView.swift in Sources */,
 				A3A610E51DB7539D00001691 /* ReachabilityUtils.swift in Sources */,
 				A3A610ED1DB7A02500001691 /* ImageController.swift in Sources */,
 				A3A610EB1DB79B5800001691 /* DatabaseUtils.swift in Sources */,

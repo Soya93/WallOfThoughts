@@ -13,9 +13,7 @@ class DrawViewController: UIViewController {
     
     var image: UIImage?
     var drawView: DrawableView = DrawableView()
-    var toolbarView: UIView?
-    var toolItems: [UIButton] = []
-    var chosenButtonIndex : Int = 1
+    var toolbarView: ToolbarView = ToolbarView()
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -24,7 +22,14 @@ class DrawViewController: UIViewController {
         drawView.addObserver(self, forKeyPath: "hasDrawn", options: .new, context: nil)
         self.view.addSubview(drawView)
         doneButton.isEnabled = drawView.hasDrawn;
-        setUpToolBar()
+
+        //Set up the toolbar and their actions
+        toolbarView.setUpToolBar(viewHeight: self.view.frame.height, viewWidth: self.view.frame.width)
+        self.view.addSubview(toolbarView)
+        toolbarView.eraseButton.addTarget(self, action:#selector(self.erase(sender:)), for: .touchUpInside)
+        for index in 1...ColorUtils.toolbarColors.count {
+            toolbarView.toolItems[index].addTarget(self, action:#selector(self.colorPressed(sender:)), for: .touchUpInside)
+        }
     }
     
     //An observer handling the enabling and disabling of button for coming to the next view
@@ -47,48 +52,6 @@ class DrawViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    //Setting up the scrollable toolbar where the colors and the eraser are located
-    func setUpToolBar(){
-        toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-88), width: self.view.frame.width, height: 88))
-        toolbarView?.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue:247.0/255.0, alpha:1.0)
-        toolbarView?.layer.borderWidth = 1
-        toolbarView?.layer.borderColor = ColorUtils.hexStringToUIColor(hex: "CECED2").cgColor
-        let scrollView = UIScrollView()
-        scrollView.frame.size.width = (toolbarView?.frame.width)!
-        scrollView.frame.size.height = (toolbarView?.frame.height)!
-        toolbarView?.addSubview(scrollView)
-        self.view.addSubview(toolbarView!)
-        
-        toolItems = []
-        chosenButtonIndex = 1
-        let frame1 = CGRect(x: 0, y: 0 , width: 89, height: 89 )
-        let eraseButton = UIButton(type: UIButtonType.system)
-        eraseButton.frame = frame1
-        eraseButton.setImage(#imageLiteral(resourceName: "erase"), for: .normal)
-        eraseButton.tintColor = ColorUtils.hexStringToUIColor(hex: ColorUtils.toolbarColors[8])
-        eraseButton.addTarget(self, action:#selector(self.erase(sender:)), for: .touchUpInside)
-        
-        
-        toolItems.append(eraseButton)
-        scrollView.addSubview(eraseButton)
-        
-        for index in 1...ColorUtils.toolbarColors.count {
-            let frame1 = CGRect(x: 0 + (index * 66), y: 0 , width: 89, height: 89 )
-            let button = UIButton(type: UIButtonType.system)
-            button.frame = frame1
-            button.setImage(#imageLiteral(resourceName: "black"), for: .normal)
-            button.tintColor = ColorUtils.hexStringToUIColor(hex: ColorUtils.toolbarColors[index-1])
-            button.tag = index
-            button.addTarget(self, action:#selector(self.colorPressed(sender:)), for: .touchUpInside)
-            scrollView.addSubview(button)
-            toolItems.append(button)
-        }
-        
-        scrollView.contentSize.width = CGFloat(66*toolItems.count)
-        toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
-    }
-    
     //Method which handles when color in the toolbar has been pressed.
     @IBAction func colorPressed(sender: UIButton) {
         var id = 0
@@ -97,13 +60,13 @@ class DrawViewController: UIViewController {
         }
         
         //Changes the image of the previous and the current chosen color.
-        if chosenButtonIndex != 0 {
-            toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
+        if toolbarView.chosenButtonIndex != 0 {
+            toolbarView.toolItems[toolbarView.chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
         }else{
-            toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase"), for: .normal)
+            toolbarView.toolItems[toolbarView.chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase"), for: .normal)
         }
         sender.setImage(#imageLiteral(resourceName: "black-big"), for: .normal)
-        chosenButtonIndex = sender.tag
+        toolbarView.chosenButtonIndex = sender.tag
         
         //Update color and width for drawing
         drawView.drawColor = ColorUtils.hexStringToUIColor(hex: ColorUtils.toolbarColors[id-1])
@@ -114,11 +77,11 @@ class DrawViewController: UIViewController {
     @IBAction func erase(sender: UIButton) {
         
         //Changes the image of the previous and the current chosen eraser.
-        if chosenButtonIndex != 0 {
-            toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
+        if toolbarView.chosenButtonIndex != 0 {
+            toolbarView.toolItems[toolbarView.chosenButtonIndex].setImage(#imageLiteral(resourceName: "black"), for: .normal)
         }
-        chosenButtonIndex = 0
-        toolItems[chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase-big"), for: .normal)
+        toolbarView.chosenButtonIndex = 0
+        toolbarView.toolItems[toolbarView.chosenButtonIndex].setImage(#imageLiteral(resourceName: "erase-big"), for: .normal)
         
         //Update color and width for drawing
         drawView.drawColor = UIColor.white
