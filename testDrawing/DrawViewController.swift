@@ -13,6 +13,7 @@ class DrawViewController: UIViewController {
     
     var image: UIImage?
     var drawView: DrawableView = DrawableView()
+    var toolbarView: UIView?
     var toolItems: [UIButton] = []
     var chosenButtonIndex : Int = 1
     @IBOutlet weak var doneButton: UIBarButtonItem!
@@ -49,15 +50,15 @@ class DrawViewController: UIViewController {
     
     //Setting up the scrollable toolbar where the colors and the eraser are located
     func setUpToolBar(){
-        let toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-88), width: self.view.frame.width, height: 88))
-        toolbarView.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue:247.0/255.0, alpha:1.0)
-        toolbarView.layer.borderWidth = 1
-        toolbarView.layer.borderColor = ColorUtils.hexStringToUIColor(hex: "CECED2").cgColor
+       toolbarView = UIView(frame: CGRect(x: 0, y: (self.view.frame.height-88), width: self.view.frame.width, height: 88))
+        toolbarView?.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue:247.0/255.0, alpha:1.0)
+        toolbarView?.layer.borderWidth = 1
+        toolbarView?.layer.borderColor = ColorUtils.hexStringToUIColor(hex: "CECED2").cgColor
         let scrollView = UIScrollView()
-        scrollView.frame.size.width = toolbarView.frame.width
-        scrollView.frame.size.height = toolbarView.frame.height
-        toolbarView.addSubview(scrollView)
-        self.view.addSubview(toolbarView)
+        scrollView.frame.size.width = (toolbarView?.frame.width)!
+        scrollView.frame.size.height = (toolbarView?.frame.height)!
+        toolbarView?.addSubview(scrollView)
+        self.view.addSubview(toolbarView!)
         
         
         toolItems = []
