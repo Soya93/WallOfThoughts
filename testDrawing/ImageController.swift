@@ -31,7 +31,7 @@ import Foundation
         //Compare pixelpoints to remove the duplication of the image, since the vector position corresponds to two positions in the panorama view.
         if (imagePixel?.x.rounded())! < image.pixelPoint.x + 2 && (imagePixel?.x.rounded())! > image.pixelPoint.x - 2 {
             
-            image.imageView.frame = CGRect(x: ((imageLocation?.x)!), y: ((imageLocation?.y)!), width: (image.imageView.image?.size.width)!/4, height: (image.imageView.image?.size.height)!/4)
+            image.imageView.frame = CGRect(x: (imageLocation?.x)!, y: (imageLocation?.y)!, width: (image.imageView.image?.size.width)!/4, height: (image.imageView.image?.size.height)!/4)
             PanoramaView.shared()?.addSubview(image.imageView)
         }
     }
